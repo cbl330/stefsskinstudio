@@ -5,8 +5,6 @@
  * @package Understrap
  */
 
-// Testing repo
-
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
