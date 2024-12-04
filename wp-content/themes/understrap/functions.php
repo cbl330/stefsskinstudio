@@ -43,18 +43,3 @@ if ( class_exists( 'Jetpack' ) ) {
 foreach ( $understrap_includes as $file ) {
 	require_once get_theme_file_path( $understrap_inc_dir . $file );
 }
-
-/**
- * Register ACF Gutenberg Blocks
- * ------------------------------------------------------------------------------
- */
-
- add_action('init', 'register_acf_blocks');
-
- function register_acf_blocks() {
-	 register_block_type( __DIR__ . '/blocks/block-awards' );
-	 register_block_type( __DIR__ . '/blocks/block-cta' );
-	 register_block_type( __DIR__ . '/blocks/block-faq' );
-	 register_block_type( __DIR__ . '/blocks/block-image-content' );
-	 register_block_type( __DIR__ . '/blocks/block-wysiwyg' );
- };
