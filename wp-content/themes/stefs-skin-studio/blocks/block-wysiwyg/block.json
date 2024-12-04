@@ -1,0 +1,22 @@
+{
+    "name": "block-wysiwyg",
+    "title": "Block - Custom WYSIWYG",
+    "description": "A custom WYSIWYG with decorative corners",
+    "editorStyle": [
+        "file:./block-wysiwyg.css"
+    ],
+    "category": "sss-blocks",
+    "icon": "admin-users",
+    "keywords": [
+        "post",
+        "author"
+    ],
+    "postTypes": [
+        "post",
+        "page"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block-wysiwyg.php"
+    }
+}

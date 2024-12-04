@@ -1,0 +1,22 @@
+{
+    "name": "block-image-content",
+    "title": "Block - Image/Content",
+    "description": "Display an image and content in various layout options",
+    "editorStyle": [
+        "file:./block-image-content.css"
+    ],
+    "category": "sss-blocks",
+    "icon": "admin-users",
+    "keywords": [
+        "post",
+        "author"
+    ],
+    "postTypes": [
+        "post",
+        "page"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block-image-content.php"
+    }
+}

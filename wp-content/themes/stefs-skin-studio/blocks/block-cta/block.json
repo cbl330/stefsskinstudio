@@ -1,0 +1,22 @@
+{
+    "name": "block-cta",
+    "title": "Block - CTA",
+    "description": "Custom CTA's",
+    "editorStyle": [
+        "file:./block-cta.css"
+    ],
+    "category": "sss-blocks",
+    "icon": "admin-users",
+    "keywords": [
+        "post",
+        "author"
+    ],
+    "postTypes": [
+        "post",
+        "page"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block-cta.php"
+    }
+}

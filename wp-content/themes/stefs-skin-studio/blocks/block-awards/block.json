@@ -1,0 +1,22 @@
+{
+    "name": "block-awards",
+    "title": "Block - Awards",
+    "description": "Display an array of awards",
+    "editorStyle": [
+        "file:./block-awards.css"
+    ],
+    "category": "sss-blocks",
+    "icon": "admin-users",
+    "keywords": [
+        "post",
+        "author"
+    ],
+    "postTypes": [
+        "post",
+        "page"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block-awards.php"
+    }
+}

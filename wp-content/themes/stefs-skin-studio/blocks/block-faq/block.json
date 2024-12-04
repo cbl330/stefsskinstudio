@@ -1,0 +1,22 @@
+{
+    "name": "block-faq",
+    "title": "Block - FAQ",
+    "description": "List of frequently asked questions",
+    "editorStyle": [
+        "file:./block-faq.css"
+    ],
+    "category": "sss-blocks",
+    "icon": "admin-users",
+    "keywords": [
+        "post",
+        "author"
+    ],
+    "postTypes": [
+        "post",
+        "page"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block-faq.php"
+    }
+}
