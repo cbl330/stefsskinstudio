@@ -1,0 +1,19 @@
+.btn {
+    background-color: $lt-gold;
+    color: $white;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: rem(14);
+    border-radius: 0;
+    transition: all .3s ease-in-out;
+
+    &:hover,
+    &:focus {
+        color: $white;
+    }
+
+    &:active {
+        border: none !important;
+        color: $white !important;
+    }
+}

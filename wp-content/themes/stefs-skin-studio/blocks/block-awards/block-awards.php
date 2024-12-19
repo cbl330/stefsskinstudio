@@ -1,48 +1,30 @@
-<?php
-// Fetch ACF fields
-$header = get_field('award_header');
-$awards = get_field('award_repeater');
+<section class="py-5 bg-white text-center">
+    <div class="container">
+        <!-- Heading -->
+        <?php if (get_field('award_header')): ?>
+            <h2 class="fw-bold mb-4"><?php echo esc_html(get_field('award_header')); ?></h2>
+        <?php endif; ?>
 
-if ($awards): ?>
-    <section class="awards-block py-5 bg-light">
-        <div class="container text-center">
-            <!-- Header -->
-            <?php if ($header): ?>
-                <h2 class="awards-header display-5 fw-bold mb-4">
-                    <?php echo esc_html($header); ?>
-                </h2>
-            <?php endif; ?>
-            
-            <!-- Awards -->
-            <div class="row justify-content-center">
-                <?php foreach ($awards as $award): ?>
-                    <div class="col-6 col-md-3 mb-4">
-                        <img src="<?php echo esc_url($award['award']); ?>" 
-                             alt="Award Image" 
-                             class="img-fluid rounded-circle shadow">
-                    </div>
-                <?php endforeach; ?>
+        <!-- Award Badges -->
+        <?php if (have_rows('award_repeater')): ?>
+            <div class="d-flex justify-content-center flex-wrap">
+                <?php while (have_rows('award_repeater')): the_row(); ?>
+                    <?php 
+                        $award_image = get_sub_field('award'); 
+                        if ($award_image): 
+                    ?>
+                        <!-- Single Badge -->
+                        <div class="mx-3 mb-3">
+                            <img 
+                                src="<?php echo esc_url($award_image); ?>" 
+                                alt="<?php echo esc_attr__('Award Badge', 'text-domain'); ?>" 
+                                class="img-fluid" 
+                                style="max-width: 150px;"
+                            >
+                        </div>
+                    <?php endif; ?>
+                <?php endwhile; ?>
             </div>
-        </div>
-    </section>
-<?php endif; ?>
-
-<style>
-    .awards-block {
-    background-color: #f9f9f9;
-}
-
-.awards-block .awards-header {
-    color: #333;
-}
-
-.awards-block img {
-    max-width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-.awards-block img:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
-}
-</style>
+        <?php endif; ?>
+    </div>
+</section>

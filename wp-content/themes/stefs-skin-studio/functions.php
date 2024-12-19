@@ -52,6 +52,13 @@ function theme_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
+/**
+ * Load Font Awesome 5
+ */
+function understrap_child_enqueue_fontawesome() {
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+}
+add_action('wp_enqueue_scripts', 'understrap_child_enqueue_fontawesome');
 
 
 /**
@@ -107,6 +114,8 @@ add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_co
 	 register_block_type( __DIR__ . '/blocks/block-faq' );
 	 register_block_type( __DIR__ . '/blocks/block-image-content' );
 	 register_block_type( __DIR__ . '/blocks/block-wysiwyg' );
+	 register_block_type( __DIR__ . '/blocks/block-services' );
+	 register_block_type( __DIR__ . '/blocks/block-testimonies' );
  };
 
 //  Custom Navigation Settings
@@ -117,3 +126,26 @@ function register_theme_menus() {
     ));
 }
 add_action('init', 'register_theme_menus');
+
+/**
+ * Enqeue Google Fonts
+ * ------------------------------------------------------------------------------
+ */
+
+//   font-family: "Signika", sans-serif
+//   font-family: "Lato", sans-serif;
+
+function enqueue_updated_google_fonts() {
+    // Add preconnect links for optimal font loading
+    echo '<link rel="preconnect" href="https://fonts.googleapis.com">';
+    echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
+    
+    // Enqueue the updated Google Fonts stylesheet
+    wp_enqueue_style(
+        'google-fonts',
+        'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Signika:wght@300..700&display=swap',
+        array(), // No dependencies
+        null // Version not set to avoid cache issues
+    );
+}
+add_action('wp_head', 'enqueue_updated_google_fonts');

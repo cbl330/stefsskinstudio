@@ -1,0 +1,16 @@
+/* Apply font smoothing for all elements */
+* {
+    -webkit-font-smoothing: antialiased; /* Smoothens fonts in WebKit browsers */
+    -moz-osx-font-smoothing: grayscale;  /* Smoothens fonts in macOS browsers */
+    text-rendering: optimizeLegibility;  /* Improves kerning and font rendering */
+}
+
+/* Set base font to Lato across the site */
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+/* Set all headers to use Signika */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Signika', sans-serif;
+}

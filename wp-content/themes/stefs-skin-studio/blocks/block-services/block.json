@@ -1,0 +1,22 @@
+{
+    "name": "block-services",
+    "title": "Block - Services",
+    "description": "Show a list of services",
+    "editorStyle": [
+        "file:./block-wysiwyg.css"
+    ],
+    "category": "sss-blocks",
+    "icon": "admin-users",
+    "keywords": [
+        "post",
+        "author"
+    ],
+    "postTypes": [
+        "post",
+        "page"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block-services.php"
+    }
+}

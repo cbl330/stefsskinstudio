@@ -20,11 +20,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
 <div class="wrapper" id="page-wrapper">
+
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+
 		<div class="row">
+
 			<?php
-				get_template_part('template-parts/hero', 'front-page');
+				get_template_part('template-parts/hero', 'interior-page');
 			?>
+
 
 			<main class="site-main" id="main">
 
@@ -41,6 +45,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 				?>
 
 			</main>
+
+			<?php
+			// Do the right sidebar check and close div#primary.
+			// get_template_part( 'global-templates/right-sidebar-check' );
+			?>
 
 		</div><!-- .row -->
 

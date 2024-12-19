@@ -15392,4 +15392,408 @@ body.understrap-no-sidebar .wp-block-cover.alignwide {
   border: 1px solid #e9ecef;
 }
 
+/* Reset css
+   ========================================================================== */
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+.small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+a,
+nav,
+section,
+summary,
+time,
+mark,
+.mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  font-size: inherit;
+  background: transparent;
+  border: 0;
+  outline: none;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+td {
+  margin: 0;
+  padding: 0.5rem;
+  vertical-align: baseline;
+  font-size: inherit;
+  background: transparent;
+  border: 1px solid black;
+  outline: none;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section,
+figcaption,
+figure,
+main {
+  display: block;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+sub,
+sup {
+  position: relative;
+  vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+audio,
+video,
+iframe {
+  display: block;
+  max-width: 100%;
+}
+
+/* mini laptop resolution 1349 X 662 and 1246 X 681 and 1218 X 672 */
+/* Mozila Firefox */
+/* Apply font smoothing for all elements */
+* {
+  -webkit-font-smoothing: antialiased; /* Smoothens fonts in WebKit browsers */
+  -moz-osx-font-smoothing: grayscale; /* Smoothens fonts in macOS browsers */
+  text-rendering: optimizeLegibility; /* Improves kerning and font rendering */
+}
+
+/* Set base font to Lato across the site */
+body {
+  font-family: "Lato", sans-serif;
+}
+
+/* Set all headers to use Signika */
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-family: "Signika", sans-serif;
+}
+
+#wpadminbar {
+  position: fixed;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100%;
+}
+
+.main-content {
+  overflow: hidden;
+}
+
+.main-container {
+  width: 100%;
+  align-self: start;
+}
+
+@media (max-width: 991px) {
+  .desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .mobile {
+    display: none;
+  }
+}
+
+nav li {
+  list-style: none;
+  font-size: 1.125rem;
+}
+
+#header .navbar {
+  padding: 0;
+}
+#header .container-header {
+  padding: 0;
+  background-color: #fff;
+  border-bottom: 3px solid #00E9C9;
+}
+#header .wrap-logo img {
+  width: auto;
+  height: 100%;
+  max-height: 2.1875rem;
+  margin: 0.625rem 0 0.625rem 1.875rem;
+}
+#header .wrap-menu-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0.625rem 1.875rem 0.625rem 0;
+  border: none;
+}
+#header .wrap-menu-toggle .bar {
+  display: block;
+  height: 3px;
+  background-color: #333;
+  margin: 3px auto;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+#header .wrap-menu-toggle .bar-short {
+  width: 20px;
+  background-color: #FF2D74;
+}
+#header .wrap-menu-toggle .bar-middle {
+  width: 30px;
+  background-color: #00E9C9;
+}
+#header .wrap-menu-toggle:focus {
+  box-shadow: none;
+}
+#header .wrap-menu-toggle[data-bs-toggle=collapse][aria-expanded=true] {
+  height: 30px;
+  width: 30px;
+}
+#header .wrap-menu-toggle[data-bs-toggle=collapse][aria-expanded=true] .bar {
+  position: absolute;
+  right: 1.875rem;
+}
+#header .wrap-menu-toggle[data-bs-toggle=collapse][aria-expanded=true] .bar-short {
+  width: 30px;
+  background-color: #FF2D74;
+}
+#header .wrap-menu-toggle[data-bs-toggle=collapse][aria-expanded=true] .bar-top {
+  transform: rotate(45deg) translate(0, 0);
+}
+#header .wrap-menu-toggle[data-bs-toggle=collapse][aria-expanded=true] .bar-middle {
+  opacity: 0;
+}
+#header .wrap-menu-toggle[data-bs-toggle=collapse][aria-expanded=true] .bar-bottom {
+  transform: rotate(-45deg) translate(0, 0);
+}
+#header .nav {
+  padding: 1.875rem 0 0 0;
+}
+#header .menu-item {
+  padding: 0.3125rem 1.875rem;
+}
+#header .nav-link {
+  padding: 0;
+  font-weight: 700;
+  color: #1E1A19;
+  transition: all 0.3s ease-in-out;
+}
+#header .nav-link:hover, #header .nav-link:active, #header .nav-link[aria-expanded=true] {
+  color: #FF2D74;
+}
+#header .btn-book-now {
+  padding: 1.25rem 1.875rem;
+  margin: 1.875rem 0 0 0;
+  background-color: #00E9C9;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+#header .btn-book-now:hover, #header .btn-book-now:active, #header .btn-book-now:focus {
+  background-color: #FF2D74;
+}
+#header .btn-book-now:hover .nav-link, #header .btn-book-now:active .nav-link, #header .btn-book-now:focus .nav-link {
+  color: #fff;
+}
+#header .btn-book-now .nav-link {
+  font-size: clamp(20px, 1vw, 18px);
+  font-weight: 800;
+  color: #1E1A19;
+}
+#header .nav-service .dropdown-item:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f5bb";
+  font-weight: 900;
+  margin-right: 0.625rem;
+  color: #00E9C9;
+  display: inline-block;
+  vertical-align: middle;
+}
+#header .dropdown-menu {
+  border: none;
+}
+#header .dropdown-menu .menu-item {
+  padding: 0.3125rem 0;
+}
+#header .dropdown-menu .dropdown-item {
+  padding: 0;
+}
+#header .navbar-collapse {
+  border-top: 3px solid #00E9C9;
+}
+@media (min-width: 992px) {
+  #header .navbar {
+    z-index: 10;
+  }
+  #header .container-header {
+    align-items: stretch;
+  }
+  #header .wrap-logo img {
+    max-height: 3.125rem;
+    margin: 0 0 0 12.5vw;
+    padding: 0.3125rem 0;
+  }
+  #header .wrap-menu-toggle {
+    display: none;
+  }
+  #header .nav {
+    width: 100%;
+    justify-content: end;
+    align-items: center;
+    padding: 0;
+  }
+  #header .menu-item {
+    padding: 0 0.9375rem;
+  }
+  #header .nav-link {
+    align-items: center;
+    font-weight: 400;
+  }
+  #header .btn-book-now {
+    width: 100%;
+    max-width: 15rem;
+    height: 100%;
+    padding: 0;
+    margin: 0 0 0 2.1875rem;
+  }
+  #header .btn-book-now .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  #header .dropdown-menu {
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 15px);
+    padding: 1rem 3rem;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0px 0px 20px 0px rgba(30, 26, 25, 0.1);
+    z-index: -1;
+  }
+  #header .dropdown-menu .menu-item {
+    padding: 0.3125rem 0;
+  }
+  #header .dropdown-menu .dropdown-item {
+    padding: 0;
+  }
+  #header .navbar-collapse {
+    align-items: stretch;
+    justify-content: end;
+    border-top: none;
+  }
+}
+
+.btn, .woocommerce-notices-wrapper .woocommerce-message a.button, .woocommerce-info a.button, .wpcf7 input[type=submit] {
+  background-color: #FFB843;
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: 0;
+  transition: all 0.3s ease-in-out;
+}
+.btn:hover, .woocommerce-notices-wrapper .woocommerce-message a.button:hover, .woocommerce-info a.button:hover, .wpcf7 input[type=submit]:hover, .btn:focus, .woocommerce-notices-wrapper .woocommerce-message a.button:focus, .woocommerce-info a.button:focus, .wpcf7 input[type=submit]:focus {
+  color: #fff;
+}
+.btn:active, .woocommerce-notices-wrapper .woocommerce-message a.button:active, .woocommerce-info a.button:active, .wpcf7 input[type=submit]:active {
+  border: none !important;
+  color: #fff !important;
+}
+
 /*# sourceMappingURL=child-theme.css.map */

@@ -1,85 +1,68 @@
-<?php
-// Fetch ACF fields
-$hero_content = get_field('iph_content');
-$hero_images = get_field('iph_hero_image_group');
+<?php 
+$iph_content = get_field('iph_content'); // Hero content group
+$iph_image_group = get_field('iph_hero_image_group'); // Hero image group
+?>
 
-if ($hero_content && $hero_images): ?>
-    <section class="interior-page-hero py-5 bg-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <!-- Hero Content -->
+<section class="bg-white py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Image Content -->
+            <?php if (!empty($iph_image_group['iph_primary_image']) || !empty($iph_image_group['iph_secondary_image'])): ?>
                 <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
-                    <?php if (!empty($hero_content['iph_sub_hero_header'])): ?>
-                        <p class="hero-sub-header text-muted small mb-2">
-                            <?php echo esc_html($hero_content['iph_sub_hero_header']); ?>
-                        </p>
-                    <?php endif; ?>
-                    
-                    <?php if (!empty($hero_content['iph_hero_header'])): ?>
-                        <h1 class="hero-header display-4 fw-bold mb-3">
-                            <?php echo esc_html($hero_content['iph_hero_header']); ?>
-                        </h1>
-                    <?php endif; ?>
-                    
-                    <?php if (!empty($hero_content['iph_hero_content'])): ?>
-                        <div class="hero-description mb-4">
-                            <?php echo wp_kses_post($hero_content['iph_hero_content']); ?>
-                        </div>
-                    <?php endif; ?>
-                    
-                    <?php if (!empty($hero_content['iph_hero_buttons'])): ?>
-                        <div class="hero-buttons">
-                            <?php foreach ($hero_content['iph_hero_buttons'] as $button): ?>
-                                <a href="<?php echo esc_url($button['iph_button_link']); ?>" 
-                                   class="btn btn-primary me-2 mb-2">
-                                    <?php echo esc_html($button['iph_button_text']); ?>
-                                </a>
-                            <?php endforeach; ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
-
-                <!-- Hero Images -->
-                <div class="col-lg-6">
-                    <div class="row g-3 justify-content-center">
-                        <?php if (!empty($hero_images['iph_primary_image'])): ?>
-                            <div class="col-12 text-center">
-                                <img src="<?php echo esc_url($hero_images['iph_primary_image']); ?>" 
-                                     alt="Primary Hero Image" 
-                                     class="img-fluid rounded shadow">
-                            </div>
+                    <div class="position-relative d-inline-block" style="max-width: 300px;">
+                        <?php if (!empty($iph_image_group['iph_primary_image'])): ?>
+                            <img 
+                                src="<?php echo esc_url($iph_image_group['iph_primary_image']); ?>" 
+                                alt="<?php echo esc_attr__('Hero Primary Image', 'text-domain'); ?>" 
+                                class="img-fluid rounded-circle shadow"
+                            >
                         <?php endif; ?>
-
-                        <?php if (!empty($hero_images['iph_secondary_image'])): ?>
-                            <div class="col-6 text-center">
-                                <img src="<?php echo esc_url($hero_images['iph_secondary_image']); ?>" 
-                                     alt="Secondary Hero Image" 
-                                     class="img-fluid rounded shadow-sm">
-                            </div>
+                        
+                        <?php if (!empty($iph_image_group['iph_secondary_image'])): ?>
+                            <img 
+                                src="<?php echo esc_url($iph_image_group['iph_secondary_image']); ?>" 
+                                alt="<?php echo esc_attr__('Hero Secondary Image', 'text-domain'); ?>" 
+                                class="img-fluid rounded-circle position-absolute" 
+                                style="width: 50%; bottom: -10%; left: 50%; transform: translateX(-50%);"
+                            >
                         <?php endif; ?>
                     </div>
                 </div>
+            <?php endif; ?>
+
+            <!-- Text Content -->
+            <div class="col-lg-6 text-center text-lg-start">
+                <?php if (!empty($iph_content['iph_sub_hero_header'])): ?>
+                    <p class="text-muted mb-2">
+                        <?php echo esc_html($iph_content['iph_sub_hero_header']); ?>
+                    </p>
+                <?php endif; ?>
+                
+                <?php if (!empty($iph_content['iph_hero_header'])): ?>
+                    <h1 class="fw-bold">
+                        <?php echo esc_html($iph_content['iph_hero_header']); ?>
+                    </h1>
+                <?php endif; ?>
+                
+                <?php if (!empty($iph_content['iph_hero_content'])): ?>
+                    <div class="mb-4">
+                        <?php echo wp_kses_post($iph_content['iph_hero_content']); ?>
+                    </div>
+                <?php endif; ?>
+                
+                <?php if (!empty($iph_content['iph_hero_buttons'])): ?>
+                    <div class="d-flex justify-content-center justify-content-lg-start">
+                        <?php foreach ($iph_content['iph_hero_buttons'] as $button): ?>
+                            <a 
+                                href="<?php echo esc_url($button['iph_button_link']); ?>" 
+                                class="btn <?php echo ($loop->first ? 'btn-primary' : 'btn-outline-secondary'); ?> me-3"
+                            >
+                                <?php echo esc_html($button['iph_button_text']); ?>
+                            </a>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
-    </section>
-<?php endif; ?>
-
-<style>
-    .interior-page-hero {
-    background-color: #f9f9f9;
-}
-
-.hero-sub-header {
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-}
-
-.hero-header {
-    color: #333;
-}
-
-.hero-description {
-    color: #555;
-    line-height: 1.6;
-}
-</style>
+    </div>
+</section>

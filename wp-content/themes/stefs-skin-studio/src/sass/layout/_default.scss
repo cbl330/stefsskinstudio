@@ -1,0 +1,66 @@
+// :root {
+// 	--space-lg: #{rem(100px)};
+// 	--space-md: #{rem(80px)};
+// 	--space-sm: #{rem(50px)};
+// 	@include respond-below(xl) {
+// 		--space-lg: #{rem(50px)};
+// 		--space-md: #{rem(50px)};
+// 	}
+// 	@include respond-below(md) {
+// 		--space-md: #{rem(40px)};
+// 		--space-sm: #{rem(30px)};
+// 	}
+// }
+
+// body {
+// 	margin-top: rem(150px);
+// 	@include respond-below(lg) {
+// 		margin-top: rem(90px);
+// 	}
+// }
+
+// CSS for WP-Admin
+#wpadminbar {
+	position: fixed;
+}
+.wrapper {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	min-height: 100%;
+	// overflow: hidden;
+}
+.main-content {
+	overflow: hidden;
+}
+.main-container {
+	width: 100%;
+	align-self: start;
+}
+
+// Show/Hide on desktop/mobile based on class -- GLOBAL
+.desktop {
+	@include respond-below(lg) {
+		display: none;
+	}
+}
+
+.mobile {
+	@include respond-above(lg) {
+		display: none;
+	}
+}
+
+// ------------------------------------------------
+// DEFAULT -- HEADER STYLES
+// ------------------------------------------------
+
+// Navigation List Item
+nav {
+	li {
+		list-style: none;
+		font-size: rem(18px);
+	}
+}

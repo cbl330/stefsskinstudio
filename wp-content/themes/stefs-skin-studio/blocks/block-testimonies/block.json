@@ -1,0 +1,22 @@
+{
+    "name": "block-testimonies",
+    "title": "Block - Testimonies",
+    "description": "Display an array of Google reviews",
+    "editorStyle": [
+        "file:./block-testimonies.css"
+    ],
+    "category": "sss-blocks",
+    "icon": "admin-users",
+    "keywords": [
+        "post",
+        "author"
+    ],
+    "postTypes": [
+        "post",
+        "page"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block-testimonies.php"
+    }
+}

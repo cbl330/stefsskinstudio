@@ -1,95 +1,48 @@
-<?php
-// Fetch ACF fields
-$header = get_field('faq_header');
-$content = get_field('faq_content');
-$questions = get_field('faq_questions');
-?>
-
-<section class="faq-block py-5">
+<section class="py-5 bg-white">
     <div class="container">
-        <!-- FAQ Header -->
-        <?php if ($header): ?>
-            <h2 class="faq-header display-5 fw-bold mb-3">
-                <?php echo esc_html($header); ?>
-            </h2>
-        <?php endif; ?>
+        <!-- Section Heading -->
+        <div class="mb-4">
+            <?php if (get_field('faq_header')): ?>
+                <h2 class="fw-bold"><?php echo esc_html(get_field('faq_header')); ?></h2>
+            <?php endif; ?>
+            
+            <?php if (get_field('faq_content')): ?>
+                <p class="text-muted"><?php echo wp_kses_post(get_field('faq_content')); ?></p>
+            <?php endif; ?>
+        </div>
 
-        <!-- FAQ Content -->
-        <?php if ($content): ?>
-            <div class="faq-intro mb-4">
-                <?php echo wp_kses_post($content); ?>
-            </div>
-        <?php endif; ?>
-
-        <!-- FAQ Questions -->
-        <?php if ($questions): ?>
+        <!-- Accordion -->
+        <?php if (have_rows('faq_questions')): ?>
             <div class="accordion" id="faqAccordion">
-                <?php foreach ($questions as $index => $faq): ?>
-                    <div class="accordion-item border-0">
-                        <h3 class="accordion-header" id="faqHeading<?php echo $index; ?>">
-                            <button 
-                                class="accordion-button collapsed fw-bold text-dark" 
-                                type="button" 
-                                data-bs-toggle="collapse" 
-                                data-bs-target="#faqCollapse<?php echo $index; ?>" 
-                                aria-expanded="false" 
-                                aria-controls="faqCollapse<?php echo $index; ?>">
-                                <?php echo esc_html($faq['faq_question']); ?>
+                <?php $faq_count = 0; ?>
+                <?php while (have_rows('faq_questions')): the_row(); ?>
+                    <?php 
+                    $faq_count++;
+                    $question = get_sub_field('faq_question');
+                    $answer = get_sub_field('faq_answer');
+                    ?>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading<?php echo $faq_count; ?>">
+                            <button class="accordion-button <?php echo $faq_count === 1 ? '' : 'collapsed'; ?>" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#collapse<?php echo $faq_count; ?>" 
+                                    aria-expanded="<?php echo $faq_count === 1 ? 'true' : 'false'; ?>" 
+                                    aria-controls="collapse<?php echo $faq_count; ?>">
+                                <?php echo esc_html($question); ?>
                             </button>
-                        </h3>
-                        <div 
-                            id="faqCollapse<?php echo $index; ?>" 
-                            class="accordion-collapse collapse" 
-                            aria-labelledby="faqHeading<?php echo $index; ?>" 
-                            data-bs-parent="#faqAccordion">
-                            <div class="accordion-body text-muted">
-                                <?php echo wp_kses_post($faq['faq_answer']); ?>
+                        </h2>
+                        <div id="collapse<?php echo $faq_count; ?>" 
+                             class="accordion-collapse collapse <?php echo $faq_count === 1 ? 'show' : ''; ?>" 
+                             aria-labelledby="heading<?php echo $faq_count; ?>" 
+                             data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <?php echo wp_kses_post($answer); ?>
                             </div>
                         </div>
                     </div>
-                <?php endforeach; ?>
+                <?php endwhile; ?>
             </div>
         <?php endif; ?>
     </div>
 </section>
-
-<style>
-    .faq-block {
-    background-color: #fff;
-    color: #333;
-}
-
-.faq-block .faq-header {
-    color: #333;
-}
-
-.accordion-button {
-    background: none;
-    border: none;
-    font-size: 1.1rem;
-    padding: 1rem;
-    text-align: left;
-    box-shadow: none;
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-.accordion-button:hover {
-    background-color: #f8f8f8;
-    color: #e96a69;
-}
-
-.accordion-button:focus {
-    box-shadow: none;
-}
-
-.accordion-item {
-    border-bottom: 1px solid #ddd;
-}
-
-.accordion-body {
-    padding: 1rem 1.25rem;
-    line-height: 1.6;
-    font-size: 0.95rem;
-    color: #555;
-}
-</style>
