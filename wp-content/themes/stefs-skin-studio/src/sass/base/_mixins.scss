@@ -228,13 +228,12 @@
 // All heading
 @mixin hgroup {
     @for $i from 1 through 6 {
-
-        h#{$i},
+        h#{$i}, 
         .h#{$i} {
-            @content;
+            font-size: map-get($headingSize, 'h#{$i}');
         }
     }
-}
+}  
 
 // Picture Image
 @mixin pictureImg($pos: absolute) {

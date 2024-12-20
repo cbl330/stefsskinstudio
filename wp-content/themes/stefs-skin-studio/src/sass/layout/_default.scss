@@ -19,6 +19,13 @@
 // 	}
 // }
 
+// Bootstrap Overrides
+@include respond-above(lg) {
+	.container {
+		max-width: 1440px;
+	}
+}
+
 // CSS for WP-Admin
 #wpadminbar {
 	position: fixed;
@@ -30,6 +37,7 @@
 	justify-content: space-between;
 	width: 100%;
 	min-height: 100%;
+	padding: 0;
 	// overflow: hidden;
 }
 .main-content {

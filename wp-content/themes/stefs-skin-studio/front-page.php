@@ -20,12 +20,16 @@ $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
 <div class="wrapper" id="page-wrapper">
-	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+	<div class="container-fluid" id="content" tabindex="-1">
 		<div class="row">
+
+			<!-- Start Hero Section -->
 			<?php
 				get_template_part('template-parts/hero', 'front-page');
 			?>
+			<!-- End Hero Section -->
 
+			<!-- Start Main Section -->
 			<main class="site-main" id="main">
 
 				<?php
@@ -41,6 +45,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				?>
 
 			</main>
+			<!-- End Main Section -->
 
 		</div><!-- .row -->
 

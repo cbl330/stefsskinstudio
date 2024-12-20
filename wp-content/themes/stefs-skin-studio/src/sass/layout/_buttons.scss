@@ -1,15 +1,18 @@
 .btn {
+    padding: rem(10) rem(20);
     background-color: $lt-gold;
-    color: $white;
+    color: $charcoal;
     font-family: "Lato", sans-serif;
     font-weight: 700;
     font-size: rem(14);
-    border-radius: 0;
+    border-radius: 5px;
     transition: all .3s ease-in-out;
 
     &:hover,
     &:focus {
+        background-color: $lt-red;
         color: $white;
+        @include box-shadow($box-shadow);
     }
 
     &:active {

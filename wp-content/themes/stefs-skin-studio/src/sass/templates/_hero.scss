@@ -1,0 +1,107 @@
+// START HOME PAGE HERO
+// --------------------------------------------------
+#hero-home {
+    position: relative;
+    padding: 0 rem(30);
+    margin: 0 0 rem(150) 0;
+
+    .wrap {
+        &-content {
+            padding: rem(60) 0 0 0;
+            margin: 0 0 rem(25) 0;
+
+            h1 {
+                color: $white;
+                font-weight: 700;
+                text-wrap: balance;
+            }
+
+            p {
+                color: $white;
+            }
+        }
+
+        &-image {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 550px;
+            margin: 0 0 rem(-200) 0;
+        }
+
+        // Internal Elements - wrap-content
+        &-text {
+            margin: rem(25) 0 rem(30) 0;
+        }
+
+        &-btn {
+            a:nth-child(2) {
+                display: none;
+            }
+        }
+    }
+
+    // Tablet Styles
+	// ________________________________________________________
+	@include respond-above(sm) {
+        .wrap {
+            &-content {
+                max-width: rem(450);
+                margin: 0 auto rem(25) auto;
+            }
+
+            // Internal Elements - wrap-content
+            &-btn {
+                column-gap: rem(15);
+                a:nth-child(2) {
+                    display: block;
+                }
+            }
+        }
+    }
+    
+    // Desktop Styles
+	// ________________________________________________________
+	@include respond-above(lg) {
+        padding: 0 rem(30);
+        margin: 0 0 rem(150) 0;
+    
+        .row-content {
+            flex-wrap: nowrap;
+        }
+
+        .wrap {
+            &-content {
+                max-width: 100%;
+                padding: rem(60) rem(100) 0 0;
+                margin: 0 0 rem(25) 0;
+    
+                h1 {
+                    color: $white;
+                    font-weight: 700;
+                }
+    
+                p {
+                    color: $white;
+                }
+            }
+    
+            &-image {
+                left: auto;
+                transform: translateX(0);
+                min-width: vw(920);
+                margin: 0;
+            }
+        }
+    }
+}
+// --------------------------------------------------
+// END HOME PAGE HERO
+
+// START INTERNAL PAGE HERO
+// --------------------------------------------------
+#hero-internal {
+
+}
+// --------------------------------------------------
+// END INTERNAL PAGE HERO

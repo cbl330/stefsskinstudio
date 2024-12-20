@@ -20,12 +20,12 @@ $header: $charcoal;
 $link: $yellow;
 $sub-head: $red;
 
-// Heading font Size
+// Heading font Size -- min-val / max-val
 $headingSize: (
-  'h1': clamp(60px, 2.5vw, 36px),
-  'h2': clamp(48px, 2.5vw, 30px),
-  'h3': clamp(32px, 2.5vw, 18px),
-  'h4': clamp(24px, 2.5vw, 16px),
+  'h1': clamp(32px, 4vw, 60px),
+  'h2': clamp(30px, 2.5vw, 48px),
+  'h3': clamp(18px, 2.5vw, 32px),
+  'h4': clamp(16px, 2.5vw, 24px),
   'h5': rem(20px),
   'h6': rem(16px)
 );
