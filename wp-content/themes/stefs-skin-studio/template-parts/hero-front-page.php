@@ -4,7 +4,7 @@ $secondary_image = get_field('hph_secondary_image'); // Secondary decorative ima
 $hero_content = get_field('hero_content'); // Hero content group
 ?>
 
-<section id="hero-home" class="container-fluid section-hero" style="background: url('<?php echo esc_url($background_image); ?>') no-repeat left/cover;">
+<section id="hero-home" class="container-fluid section-hero" style="background: url('<?php echo esc_url($background_image); ?>') no-repeat;">
     <!-- Start Content Container -->
     <div class="container container-hero">
         <div class="row-content row align-items-center">

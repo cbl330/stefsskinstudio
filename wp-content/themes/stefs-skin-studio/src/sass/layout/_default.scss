@@ -19,6 +19,12 @@
 // 	}
 // }
 
+// Global Settings
+body {
+	// max-width: rem(1920);
+	// margin: 0 auto;
+}
+
 // Bootstrap Overrides
 @include respond-above(lg) {
 	.container {

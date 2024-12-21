@@ -15839,6 +15839,8 @@ nav li {
   position: relative;
   padding: 0 1.875rem;
   margin: 0 0 9.375rem 0;
+  background-position: left !important;
+  background-size: cover !important;
 }
 #hero-home .wrap-content {
   padding: 3.75rem 0 0 0;
@@ -15880,16 +15882,19 @@ nav li {
 }
 @media (min-width: 992px) {
   #hero-home {
+    max-width: 137.5rem;
     padding: 0 1.875rem;
-    margin: 0 0 9.375rem 0;
+    margin: 0 auto 9.375rem auto;
+    background-position: top left !important;
+    background-size: contain !important;
   }
   #hero-home .row-content {
     flex-wrap: nowrap;
   }
   #hero-home .wrap-content {
     max-width: 100%;
-    padding: 3.75rem 6.25rem 0 0;
-    margin: 0 0 1.5625rem 0;
+    padding: 0 5.2083333333vw 0 0;
+    margin: 0;
   }
   #hero-home .wrap-content h1, #hero-home .wrap-content .h1 {
     color: #fff;

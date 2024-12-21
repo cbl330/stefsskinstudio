@@ -4,6 +4,8 @@
     position: relative;
     padding: 0 rem(30);
     margin: 0 0 rem(150) 0;
+    background-position: left !important;
+    background-size: cover !important;
 
     .wrap {
         &-content {
@@ -63,8 +65,11 @@
     // Desktop Styles
 	// ________________________________________________________
 	@include respond-above(lg) {
+        max-width: rem(2200);
         padding: 0 rem(30);
-        margin: 0 0 rem(150) 0;
+        margin: 0 auto rem(150) auto;
+        background-position: top left !important;
+        background-size: contain !important;
     
         .row-content {
             flex-wrap: nowrap;
@@ -73,8 +78,8 @@
         .wrap {
             &-content {
                 max-width: 100%;
-                padding: rem(60) rem(100) 0 0;
-                margin: 0 0 rem(25) 0;
+                padding: 0 vw(100) 0 0;
+                margin: 0;
     
                 h1 {
                     color: $white;
