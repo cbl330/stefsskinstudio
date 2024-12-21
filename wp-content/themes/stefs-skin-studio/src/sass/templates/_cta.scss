@@ -1,0 +1,46 @@
+#cta {
+    margin-left: calc(-1 * var(--bs-gutter-x));
+    margin-right: calc(-1 * var(--bs-gutter-x));
+
+    .wrap-content {
+        max-width: rem(770);
+        margin: 0 auto;
+        padding: rem(80) rem(30);
+        color: $white;
+
+        h2, .wrap-text {
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4); /* X-offset, Y-offset, blur-radius, color */
+        }
+    }
+
+    .mask {
+        height: rem(100);
+        background-color: $white;
+
+        &-top {
+            clip-path: ellipse(55% 50% at 50% 0%);
+            top: calc(0px - var(--wrap-padding, 1rem)); /* Adjust for padding */
+        }
+
+        &-bottom {
+            clip-path: ellipse(55% 50% at 50% 100%);
+            bottom: calc(0px - var(--wrap-padding, 1rem)); /* Adjust for padding */
+        }
+    }
+
+    // Tablet Styles
+	// ________________________________________________________
+	@include respond-above(md) {    
+        .wrap-content {
+            padding: 8vw rem(30);
+        }
+    }
+
+    // Desktop Styles
+	// ________________________________________________________
+	@include respond-above(lg) {    
+        .wrap-content {
+            padding: 6vw rem(30);
+        }
+    }
+}

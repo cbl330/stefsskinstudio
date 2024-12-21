@@ -1,0 +1,16 @@
+#service {
+    /* Ensure spacing between slider items */
+    .services-slider .slider-item {
+        margin: 0 15px;
+    }
+
+    .card {
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .card img {
+        max-width: 100%;
+        height: auto;
+    }
+}

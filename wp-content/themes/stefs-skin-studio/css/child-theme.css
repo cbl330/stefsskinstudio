@@ -15567,7 +15567,7 @@ h1,
 
 h2,
 .h2 {
-  font-size: clamp(30px, 2.5vw, 48px);
+  font-size: clamp(30px, 4vw, 48px);
 }
 
 h3,
@@ -16031,6 +16031,64 @@ nav li {
   #hero-internal {
     margin-bottom: 29.6875rem;
   }
+}
+
+#awards .row-awards {
+  max-width: 59.375rem;
+  margin: 0 auto;
+}
+
+#cta {
+  margin-left: calc(-1 * var(--bs-gutter-x));
+  margin-right: calc(-1 * var(--bs-gutter-x));
+}
+#cta .wrap-content {
+  max-width: 48.125rem;
+  margin: 0 auto;
+  padding: 5rem 1.875rem;
+  color: #fff;
+}
+#cta .wrap-content h2, #cta .wrap-content .h2, #cta .wrap-content .wrap-text {
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4); /* X-offset, Y-offset, blur-radius, color */
+}
+#cta .mask {
+  height: 6.25rem;
+  background-color: #fff;
+}
+#cta .mask-top {
+  -webkit-clip-path: ellipse(55% 50% at 50% 0%);
+  clip-path: ellipse(55% 50% at 50% 0%);
+  top: calc(0px - var(--wrap-padding, 1rem)); /* Adjust for padding */
+}
+#cta .mask-bottom {
+  -webkit-clip-path: ellipse(55% 50% at 50% 100%);
+  clip-path: ellipse(55% 50% at 50% 100%);
+  bottom: calc(0px - var(--wrap-padding, 1rem)); /* Adjust for padding */
+}
+@media (min-width: 768px) {
+  #cta .wrap-content {
+    padding: 8vw 1.875rem;
+  }
+}
+@media (min-width: 992px) {
+  #cta .wrap-content {
+    padding: 6vw 1.875rem;
+  }
+}
+
+#service {
+  /* Ensure spacing between slider items */
+}
+#service .services-slider .slider-item {
+  margin: 0 15px;
+}
+#service .card {
+  border-radius: 8px;
+  overflow: hidden;
+}
+#service .card img {
+  max-width: 100%;
+  height: auto;
 }
 
 /*# sourceMappingURL=child-theme.css.map */
