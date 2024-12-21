@@ -13,7 +13,14 @@ body {
 /* Set all headers to use Signika */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Signika', sans-serif;
+    font-weight: 700;
+    text-wrap: balance;
 }
 
 // Set All Header Sizes
 @include hgroup;
+
+.eyebrow-text {
+    font-weight: 700;
+    color: $lt-red;
+}

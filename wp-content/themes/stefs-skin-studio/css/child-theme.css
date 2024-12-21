@@ -15556,6 +15556,8 @@ body {
 /* Set all headers to use Signika */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-family: "Signika", sans-serif;
+  font-weight: 700;
+  text-wrap: balance;
 }
 
 h1,
@@ -15588,6 +15590,16 @@ h6,
   font-size: 1rem;
 }
 
+.eyebrow-text {
+  font-weight: 700;
+  color: #FF2D74;
+}
+
+@media (min-width: 500px) {
+  .container {
+    max-width: 100%;
+  }
+}
 @media (min-width: 992px) {
   .container {
     max-width: 1440px;
@@ -15633,6 +15645,11 @@ nav li {
   font-size: 1.125rem;
 }
 
+#header {
+  position: relative;
+  box-shadow: 0px 0px 20px 0px rgba(30, 26, 25, 0.1);
+  z-index: 10;
+}
 #header .navbar {
   padding: 0;
 }
@@ -15814,6 +15831,15 @@ nav li {
     border-top: none;
   }
 }
+@media (min-width: 2500px) {
+  #header {
+    max-width: 156.25rem;
+    margin: 0 auto;
+  }
+  #header .wrap-logo img {
+    margin: 0 0 0 2.6041666667vw;
+  }
+}
 
 .btn, .woocommerce-notices-wrapper .woocommerce-message a.button, .woocommerce-info a.button, .wpcf7 input[type=submit] {
   padding: 0.625rem 1.25rem;
@@ -15848,8 +15874,6 @@ nav li {
 }
 #hero-home .wrap-content h1, #hero-home .wrap-content .h1 {
   color: #fff;
-  font-weight: 700;
-  text-wrap: balance;
 }
 #hero-home .wrap-content p {
   color: #fff;
@@ -15867,7 +15891,7 @@ nav li {
 #hero-home .wrap-btn a:nth-child(2) {
   display: none;
 }
-@media (min-width: 576px) {
+@media (min-width: 500px) {
   #hero-home .wrap-content {
     max-width: 28.125rem;
     margin: 0 auto 1.5625rem auto;
@@ -15908,6 +15932,104 @@ nav li {
     transform: translateX(0);
     min-width: 47.9166666667vw;
     margin: 0;
+  }
+}
+
+#hero-internal .wrap-image {
+  display: flex;
+  margin: 0 0 -1.5625vw 0;
+}
+#hero-internal .img-group {
+  position: relative;
+  min-width: 25.0625rem;
+  min-height: 26.3125rem;
+  max-width: 35.75rem;
+  max-height: 37.5rem;
+}
+#hero-internal .img-lg, #hero-internal .img-sm {
+  position: relative;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  aspect-ratio: 1/1; /* Ensures the square aspect ratio */
+  overflow: hidden; /* Ensures no overflow */
+  box-shadow: 0px 0px 20px 0px rgba(255, 184, 67, 0.6);
+}
+#hero-internal .img-lg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 23.4375vw;
+  height: 23.4375vw;
+  min-width: 22.5rem;
+  min-height: 22.5rem;
+  border: 0.3125rem solid #FFB843;
+}
+#hero-internal .img-sm {
+  position: absolute;
+  top: 55%;
+  left: 40%;
+  width: 13.0208333333vw;
+  height: 13.0208333333vw;
+  min-width: 12.5rem;
+  min-height: 12.5rem;
+  border: 0.3125rem solid #FFB843;
+}
+@media (min-width: 500px) {
+  #hero-internal .wrap-image {
+    justify-content: end;
+  }
+  #hero-internal .wrap-content {
+    max-width: 70vw;
+  }
+}
+@media (min-width: 768px) {
+  #hero-internal .wrap-image {
+    margin: 0 0 -10vw 0;
+  }
+}
+@media (min-width: 992px) {
+  #hero-internal {
+    margin-bottom: 9.375rem;
+  }
+  #hero-internal .row-content {
+    align-items: end;
+    flex-wrap: nowrap;
+  }
+  #hero-internal .wrap-image {
+    display: block;
+    max-width: 40%;
+  }
+  #hero-internal .wrap-content {
+    max-width: 60%;
+    margin-bottom: -7vw;
+  }
+}
+@media (min-width: 1200px) {
+  #hero-internal {
+    margin-bottom: 25rem;
+  }
+  #hero-internal .wrap-content {
+    margin-bottom: -15vw;
+  }
+  #hero-internal .img-lg {
+    width: auto;
+    height: auto;
+    max-width: 32.1875rem;
+    max-height: 32.1875rem;
+  }
+  #hero-internal .img-sm {
+    top: 70%;
+    left: 45%;
+    width: auto;
+    height: auto;
+    max-width: 18.75rem;
+    max-height: 18.75rem;
+  }
+}
+@media (min-width: 2500px) {
+  #hero-internal {
+    margin-bottom: 29.6875rem;
   }
 }
 

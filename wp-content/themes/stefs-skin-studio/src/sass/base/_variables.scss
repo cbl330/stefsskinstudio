@@ -56,12 +56,14 @@ $row-gutters: rem(30px);
 // Media Query breakpoints.
 $breakpoints: (
   'xs': 376px, // Mobile Devices - Small
-  'sm': 576px, // Mobile Devices - Medium
+  // 'sm': 576px, // Mobile Devices - Medium
+  'sm': 500px, // Mobile Devices - Medium
   'md': 768px, // Mobile Devices - Large
   'lg': 992px, // Tablet Devices
   'xl': 1200px, // Laptop Devices
   'xxl': 1400px, // Desktop Devices
   'xl3': 1600px, // Desktop Devices
+  'xl4': 2500px, // Desktop Devices
 );
 
 // Misc Styles
