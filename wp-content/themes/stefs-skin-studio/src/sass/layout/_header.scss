@@ -165,6 +165,9 @@
 	// Desktop Styles
 	// ________________________________________________________
 	@include respond-above(lg) {
+		max-width: rem(2200);
+		margin: 0 auto;
+
 		.navbar {
 			z-index: 10;
 		}
@@ -249,8 +252,8 @@
 	}
 
 	@include respond-above(xl4) {
-		max-width: rem(2500);
-		margin: 0 auto;
+		// max-width: rem(2500);
+		// margin: 0 auto;
 
 		.wrap {
 			&-logo {

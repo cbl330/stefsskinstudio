@@ -41,6 +41,9 @@
     // Desktop Styles
 	// ________________________________________________________
 	@include respond-above(lg) {    
+        max-width: rem(2500);
+		margin: 0 auto;
+        
         .wrap-content {
             padding: 6vw rem(30);
         }

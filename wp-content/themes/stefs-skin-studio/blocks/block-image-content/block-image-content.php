@@ -3,13 +3,13 @@ $content_block_option = get_field('content_block_options'); // Retrieve selected
 ?>
 
 <?php if ($content_block_option === 'simple'): ?>
-    <!-- Simple Option -->
+    <!-- START SIMPLE OPTION -->
     <?php 
-    $simple_content = get_field('simple_content_block');
-    if ($simple_content): // Check if repeater field has rows
+        $simple_content = get_field('simple_content_block');
+        if ($simple_content): // Check if repeater field has rows
     ?>
-        <section class="section-image-content">
-            <div class="container">
+        <section id="image-content-simple" class="section-image-content">
+            <div class="container container-image-content">
                 <?php foreach ($simple_content as $row): ?>
                     <?php 
                     $layout = $row['scb_content_layout']; // Image Right or Left
@@ -67,65 +67,61 @@ $content_block_option = get_field('content_block_options'); // Retrieve selected
             </div>
         </section>
     <?php endif; ?>
+    <!-- END SIMPLE OPTION -->
 
 <?php elseif ($content_block_option === 'grid'): ?>
-    <!-- Grid Option -->
+    <!-- START GRID OPTION -->
     <?php 
-    $grid_content = get_field('grid_content_block');
-    if ($grid_content): // Check if repeater field has rows
+        $grid_content = get_field('grid_content_block');
+        if ($grid_content): // Check if repeater field has rows
     ?>
-        <section class="py-5 bg-white">
-            <div class="container">
+        <section id="image-content-grid" class="section-image-content">
+            <div class="container container-image-content">
                 <?php foreach ($grid_content as $row): ?>
                     <?php 
-                    $layout = $row['gcb_layout_option']; // Image Right or Left
-                    $image = $row['gcb_image_group']['gcb_image'];
-                    $content = $row['gcb_content_group'];
+                        $layout = $row['gcb_layout_option']; // Image Right or Left
+                        $image = $row['gcb_image_group']['gcb_image'];
+                        $content = $row['gcb_content_group'];
                     ?>
-                    <div class="row align-items-center mb-5">
+                    <div class="row row-image-content <?php echo $layout === 'image-right' ? 'row-right' : 'row-left'; ?>">
                         <?php if ($layout === 'image-left'): ?>
-                            <!-- Image -->
-                            <div class="col-lg-6 mb-4 mb-lg-0">
-                                <img 
-                                    src="<?php echo esc_url($image); ?>" 
-                                    alt="<?php echo esc_attr__('Image for Grid Content', 'text-domain'); ?>" 
-                                    class="img-fluid rounded shadow"
-                                >
+                            <!-- Start Image Wrap -->
+                            <div class="wrap-image img-left col-lg-6 mb-4 mb-lg-0">
+                                <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr__('Image for Grid Content', 'text-domain'); ?>" class="image-grid">
                             </div>
+                            <!-- End Image Wrap -->
                         <?php endif; ?>
-                        <!-- Text Content -->
-                        <div class="col-lg-6">
+
+                        <!-- Start Content Wrap -->
+                        <div class="wrap-content col-lg-6">
                             <?php if (!empty($content['gcb_sub_header'])): ?>
-                                <p class="text-muted"><?php echo esc_html($content['gcb_sub_header']); ?></p>
+                                <!-- Subhead -->
+                                <p class="eyebrow-text"><?php echo esc_html($content['gcb_sub_header']); ?></p>
                             <?php endif; ?>
                             <?php if (!empty($content['gcb_header'])): ?>
-                                <h2 class="fw-bold mb-3"><?php echo esc_html($content['gcb_header']); ?></h2>
+                                <!-- Header -->
+                                <h2 class="mb-3"><?php echo esc_html($content['gcb_header']); ?></h2>
                             <?php endif; ?>
                             <?php if (!empty($content['gcb_main_content'])): ?>
-                                <div><?php echo wp_kses_post($content['gcb_main_content']); ?></div>
+                                <!-- Body Text -->
+                                <div class="wrap-text mb-4"><?php echo wp_kses_post($content['gcb_main_content']); ?></div>
                             <?php endif; ?>
                             <?php if (!empty($content['gcb_content_button'])): ?>
-                                <div class="d-flex mt-3">
+                                <!-- Buttons - Max 2 -->
+                                <div class="wrap-btn">
                                     <?php 
-                                    $first = true; // Track first button
-                                    foreach ($content['gcb_content_button'] as $button): ?>
-                                        <a href="<?php echo esc_url($button['gcb_button_link']); ?>" 
-                                           class="btn <?php echo $first ? 'btn-primary me-3' : 'btn-outline-secondary'; ?>">
-                                            <?php echo esc_html($button['gcb_button_text']); ?>
-                                        </a>
-                                        <?php $first = false; // Ensure subsequent buttons are styled differently ?>
+                                        foreach ($content['gcb_content_button'] as $button): ?>
+                                            <a href="<?php echo esc_url($button['gcb_button_link']); ?>" class="btn"><?php echo esc_html($button['gcb_button_text']); ?></a>
                                     <?php endforeach; ?>
                                 </div>
                             <?php endif; ?>
                         </div>
+                        <!-- End Content Wrap -->
+
                         <?php if ($layout === 'image-right'): ?>
                             <!-- Image -->
-                            <div class="col-lg-6">
-                                <img 
-                                    src="<?php echo esc_url($image); ?>" 
-                                    alt="<?php echo esc_attr__('Image for Grid Content', 'text-domain'); ?>" 
-                                    class="img-fluid rounded shadow"
-                                >
+                            <div class="wrap-image img-right col-lg-6">
+                                <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr__('Image for Grid Content', 'text-domain'); ?>" class="image-grid">
                             </div>
                         <?php endif; ?>
                     </div>
@@ -133,4 +129,6 @@ $content_block_option = get_field('content_block_options'); // Retrieve selected
             </div>
         </section>
     <?php endif; ?>
+    <!-- END GRID OPTION -->
+
 <?php endif; ?>

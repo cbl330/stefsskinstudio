@@ -9,7 +9,6 @@ $iph_image_group = get_field('iph_hero_image_group'); // Hero image group
 
             <!-- Start Image Wrap -->
             <?php if (!empty($iph_image_group['iph_primary_image']) || !empty($iph_image_group['iph_secondary_image'])): ?>
-                <!-- <div class="wrap-image col-lg-5 col-xl-4"> -->
                 <div class="wrap-image">
                     <div class="img-group">
                         <div class="img-lg">
@@ -29,10 +28,9 @@ $iph_image_group = get_field('iph_hero_image_group'); // Hero image group
             <!-- End Image Wrap -->
 
             <!-- Start Content Wrap -->
-            <!-- <div class="wrap-content col-lg-7 col-xl-8"> -->
             <div class="wrap-content">
                 <?php if (!empty($iph_content['iph_sub_hero_header'])): ?>
-                    <div class="eyebrow-text mb-2">
+                    <div class="eyebrow-text">
                         <?php echo esc_html($iph_content['iph_sub_hero_header']); ?>
                     </div>
                 <?php endif; ?>

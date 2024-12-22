@@ -9,13 +9,15 @@
     transition: all .3s ease-in-out;
 
     &:hover,
-    &:focus {
+    &:focus,
+    &:focus-visible {
         background-color: $lt-red;
         color: $white;
         @include box-shadow($box-shadow);
     }
 
     &:active {
+        background-color: $lt-red !important;
         border: none !important;
         color: $white !important;
     }

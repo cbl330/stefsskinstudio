@@ -3,7 +3,7 @@
 #hero-home {
     position: relative;
     padding: 0 rem(30);
-    margin: 0 0 rem(150) 0;
+    margin: 0 0 rem(180) 0;
     background-position: left !important;
     background-size: cover !important;
 
@@ -65,7 +65,7 @@
 	@include respond-above(lg) {
         max-width: rem(2200);
         padding: 0 rem(30);
-        margin: 0 auto rem(150) auto;
+        margin: 0 auto;
         background-position: top left !important;
         background-size: contain !important;
     

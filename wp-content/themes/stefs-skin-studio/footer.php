@@ -23,10 +23,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			<div class="col-md-12">
 
-				<footer class="bg-light text-dark py-4">
+				<footer class="container-fluid py-4">
 					<div class="container">
 						<div class="row">
-						<!-- Left Column -->
+						<!-- Start Left Column -->
 						<div class="col-lg-6 mb-4 mb-lg-0">
 							<h5 class="mb-3">Stef's Skin Studio</h5>
 							<p>
@@ -52,7 +52,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<a href="#" class="nav-link px-0 px-lg-2 text-dark">Book Now</a>
 							</nav>
 						</div>
-						<!-- Right Column -->
+						<!-- End Left Column -->
+
+						<!-- Start Right Column -->
 						<div class="col-lg-6">
 							<div class="d-none d-lg-block mb-3">
 							<!-- Desktop-Only Section -->
@@ -84,6 +86,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<a href="#" class="text-dark">Terms and Conditions</a>.
 							</p>
 						</div>
+						<!-- End Right Column -->
+
 						</div>
 						<hr>
 						<div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center">

@@ -15591,6 +15591,7 @@ h6,
 }
 
 .eyebrow-text {
+  margin-bottom: 0.5rem;
   font-weight: 700;
   color: #FF2D74;
 }
@@ -15788,6 +15789,10 @@ nav li {
   border-top: 3px solid #00E9C9;
 }
 @media (min-width: 992px) {
+  #header {
+    max-width: 137.5rem;
+    margin: 0 auto;
+  }
   #header .navbar {
     z-index: 10;
   }
@@ -15851,10 +15856,6 @@ nav li {
   }
 }
 @media (min-width: 2500px) {
-  #header {
-    max-width: 156.25rem;
-    margin: 0 auto;
-  }
   #header .wrap-logo img {
     margin: 0 0 0 2.6041666667vw;
   }
@@ -15870,12 +15871,13 @@ nav li {
   border-radius: 5px;
   transition: all 0.3s ease-in-out;
 }
-.btn:hover, .woocommerce-notices-wrapper .woocommerce-message a.button:hover, .woocommerce-info a.button:hover, .wpcf7 input[type=submit]:hover, .btn:focus, .woocommerce-notices-wrapper .woocommerce-message a.button:focus, .woocommerce-info a.button:focus, .wpcf7 input[type=submit]:focus {
+.btn:hover, .woocommerce-notices-wrapper .woocommerce-message a.button:hover, .woocommerce-info a.button:hover, .wpcf7 input[type=submit]:hover, .btn:focus, .woocommerce-notices-wrapper .woocommerce-message a.button:focus, .woocommerce-info a.button:focus, .wpcf7 input[type=submit]:focus, .btn:focus-visible, .woocommerce-notices-wrapper .woocommerce-message a.button:focus-visible, .woocommerce-info a.button:focus-visible, .wpcf7 input[type=submit]:focus-visible {
   background-color: #FF2D74;
   color: #fff;
   box-shadow: 0px 0px 20px 0px rgba(30, 26, 25, 0.1);
 }
 .btn:active, .woocommerce-notices-wrapper .woocommerce-message a.button:active, .woocommerce-info a.button:active, .wpcf7 input[type=submit]:active {
+  background-color: #FF2D74 !important;
   border: none !important;
   color: #fff !important;
 }
@@ -15883,7 +15885,7 @@ nav li {
 #hero-home {
   position: relative;
   padding: 0 1.875rem;
-  margin: 0 0 9.375rem 0;
+  margin: 0 0 11.25rem 0;
   background-position: left !important;
   background-size: cover !important;
 }
@@ -15927,7 +15929,7 @@ nav li {
   #hero-home {
     max-width: 137.5rem;
     padding: 0 1.875rem;
-    margin: 0 auto 9.375rem auto;
+    margin: 0 auto;
     background-position: top left !important;
     background-size: contain !important;
   }
@@ -16092,6 +16094,10 @@ nav li {
   }
 }
 @media (min-width: 992px) {
+  #cta {
+    max-width: 156.25rem;
+    margin: 0 auto;
+  }
   #cta .wrap-content {
     padding: 6vw 1.875rem;
   }
@@ -16203,6 +16209,110 @@ nav li {
   }
   #services .services-slider .slick-list {
     padding-right: 0.625rem; /* Fit slider correctly for tablets */
+  }
+}
+
+.section-image-content .btn:nth-child(2), .section-image-content .woocommerce-notices-wrapper .woocommerce-message a.button:nth-child(2), .woocommerce-notices-wrapper .woocommerce-message .section-image-content a.button:nth-child(2), .section-image-content .woocommerce-info a.button:nth-child(2), .woocommerce-info .section-image-content a.button:nth-child(2), .section-image-content .wpcf7 input[type=submit]:nth-child(2), .wpcf7 .section-image-content input[type=submit]:nth-child(2) {
+  display: none;
+}
+
+#image-content-grid .img-left {
+  display: none;
+}
+#image-content-grid .row-image-content {
+  position: relative;
+  padding-bottom: 1.25rem;
+}
+#image-content-grid .row-image-content:before {
+  content: url("/wp-content/themes/stefs-skin-studio/img/detail-left.svg");
+  position: absolute;
+  bottom: -1.875rem;
+  right: -1.875rem;
+  width: auto;
+  height: auto;
+  transform: rotate(270deg) scale(0.5);
+  display: inline-block;
+}
+#image-content-grid .row-left {
+  margin-bottom: 3.125rem;
+}
+#image-content-grid .row-right .wrap-content {
+  order: 2;
+}
+#image-content-grid .row-right .wrap-image {
+  order: 1;
+  margin-bottom: 1.875rem;
+}
+#image-content-grid img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3/2;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top center;
+  object-position: top center;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+@media (min-width: 992px) {
+  #image-content-grid .img-left {
+    display: block;
+  }
+  #image-content-grid .row-image-content {
+    padding-bottom: 0;
+  }
+  #image-content-grid .row-image-content .wrap-content {
+    position: relative;
+    padding: 5.625rem 3.75rem;
+  }
+  #image-content-grid .row-image-content:before {
+    display: none;
+  }
+  #image-content-grid .row-left {
+    margin-bottom: 0;
+  }
+  #image-content-grid .row-left .wrap-content:before {
+    position: absolute;
+    display: inline-block;
+    content: url("/wp-content/themes/stefs-skin-studio/img/detail-right.svg");
+    top: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+  }
+  #image-content-grid .row-right .wrap-content {
+    order: unset;
+  }
+  #image-content-grid .row-right .wrap-image {
+    order: unset;
+    margin-bottom: 0;
+  }
+  #image-content-grid .row-right .wrap-content:before {
+    display: inline-block;
+    content: url("/wp-content/themes/stefs-skin-studio/img/detail-left.svg");
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+  }
+  #image-content-grid .img-right img {
+    border-radius: 0 0.5rem 0.5rem 0.5rem;
+  }
+  #image-content-grid .img-left img {
+    border-radius: 0.5rem 0.5rem 0 0.5rem;
+  }
+  #image-content-grid img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: unset;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+    border-radius: 0;
+  }
+  #image-content-grid .wrap-image.col-lg-6 {
+    padding: 0 !important;
   }
 }
 
