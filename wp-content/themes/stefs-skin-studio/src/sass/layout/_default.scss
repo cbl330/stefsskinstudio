@@ -20,9 +20,14 @@
 // }
 
 // Global Settings
-body {
-	// max-width: rem(1920);
-	// margin: 0 auto;
+section {
+	padding-top: rem(20);
+	padding-bottom: rem(20);
+
+	@include respond-above(md) {
+		padding-top: rem(50);
+		padding-bottom: rem(50);
+	}
 }
 
 // Bootstrap Overrides

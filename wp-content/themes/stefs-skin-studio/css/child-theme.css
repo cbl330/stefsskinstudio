@@ -15595,6 +15595,25 @@ h6,
   color: #FF2D74;
 }
 
+a {
+  color: #D49938;
+}
+a h1, a .h1, a h2, a .h2, a h3, a .h3, a h4, a .h4, a h5, a .h5, a h6, a .h6, a p {
+  color: #1E1A19;
+  text-decoration: none;
+}
+
+section {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+@media (min-width: 768px) {
+  section {
+    padding-top: 3.125rem;
+    padding-bottom: 3.125rem;
+  }
+}
+
 @media (min-width: 500px) {
   .container {
     max-width: 100%;
@@ -16039,6 +16058,8 @@ nav li {
 }
 
 #cta {
+  position: relative;
+  z-index: -1;
   margin-left: calc(-1 * var(--bs-gutter-x));
   margin-right: calc(-1 * var(--bs-gutter-x));
 }
@@ -16076,19 +16097,113 @@ nav li {
   }
 }
 
-#service {
-  /* Ensure spacing between slider items */
+#services {
+  /* Header Styling */
+  /* Services Slider */
+  /* Card Styling */
 }
-#service .services-slider .slider-item {
-  margin: 0 15px;
+#services .wrap-header {
+  max-width: 48.125rem;
 }
-#service .card {
-  border-radius: 8px;
+#services .services-slider {
+  overflow: hidden; /* Prevent content overflow */
+}
+#services .services-slider .slider-item {
+  margin: 0 0.9375rem; /* Ensure spacing between slider items */
+}
+#services .slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#services .slick-list {
+  padding: 0.625rem 20% 0 0.5rem !important; /* Adjust padding for the slider */
+}
+#services .card {
+  border-radius: 0.5rem;
   overflow: hidden;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  height: 100%; /* Ensure all cards have equal height */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for shadow and scale */
 }
-#service .card img {
+#services .card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+  transform: translateY(-5px); /* Lift the card slightly */
+}
+#services .card img {
   max-width: 100%;
   height: auto;
+}
+#services .card .card-img-top {
+  width: 100%;
+  height: auto; /* Maintain proportional scaling */
+  aspect-ratio: 16/9; /* Standard aspect ratio */
+  -o-object-fit: cover;
+  object-fit: cover; /* Crop the image while maintaining ratio */
+  -o-object-position: center;
+  object-position: center; /* Center the cropped portion */
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+#services .card .card-body {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  height: 100%; /* Fill the card height */
+}
+#services .card .card-title {
+  margin-bottom: 0.625rem; /* Space below the title */
+}
+#services .card .card-text {
+  flex-grow: 1; /* Stretch to align with neighbors */
+  margin-bottom: 0.625rem; /* Space between text and button */
+}
+#services .card .btn-service {
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: auto; /* Push button to the bottom */
+  align-self: flex-start; /* Align button to the left */
+  transition: all 0.3s ease-in-out;
+}
+#services .card .btn-service i {
+  margin-left: 0.625rem;
+  font-size: 0.875rem;
+}
+#services .card:hover .btn-service {
+  color: #FF2D74; /* Change to desired hover color */
+}
+@media (max-width: 991px) {
+  #services {
+    margin-right: calc(-1 * var(--bs-gutter-x));
+  }
+  #services .card-img-top {
+    aspect-ratio: 4/3; /* Adjust aspect ratio for mobile */
+  }
+  #services .services-slider .slick-slide {
+    margin-right: 0.9375rem; /* Adjust spacing between slides */
+  }
+  #services .services-slider .slick-list {
+    padding-right: 0.9375rem; /* Fit slider correctly */
+  }
+  #services .slick-dots {
+    position: relative;
+    bottom: 0;
+    padding-right: 1.875rem;
+  }
+  #services .slick-dots li {
+    width: 0.625rem;
+  }
+  #services .slick-dots li button:before {
+    color: #FF2D74;
+  }
+}
+@media (max-width: 767px) {
+  #services .services-slider .slick-slide {
+    margin-right: 0.625rem; /* Adjust spacing for tablets */
+  }
+  #services .services-slider .slick-list {
+    padding-right: 0.625rem; /* Fit slider correctly for tablets */
+  }
 }
 
 /*# sourceMappingURL=child-theme.css.map */

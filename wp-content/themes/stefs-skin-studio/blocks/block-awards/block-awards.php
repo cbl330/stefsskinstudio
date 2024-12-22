@@ -1,4 +1,4 @@
-<section id="awards" class="section-awards py-5 bg-white text-center">
+<section id="awards" class="section-awards bg-white text-center">
     <div class="container">
         <!-- Heading -->
         <?php if (get_field('award_header')): ?>

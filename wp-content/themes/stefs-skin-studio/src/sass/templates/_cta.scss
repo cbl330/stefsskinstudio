@@ -1,4 +1,6 @@
 #cta {
+    position: relative;
+    z-index: -1;
     margin-left: calc(-1 * var(--bs-gutter-x));
     margin-right: calc(-1 * var(--bs-gutter-x));
 

@@ -24,3 +24,14 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     color: $lt-red;
 }
+
+// Global Links
+a {
+    color: $dk-gold;
+
+    // Remove link styles for headers and paragraphs inside links
+    h1, h2, h3, h4, h5, h6, p {
+        color: $charcoal;
+        text-decoration: none;
+    }
+}

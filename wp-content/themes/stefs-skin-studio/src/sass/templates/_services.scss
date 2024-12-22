@@ -1,16 +1,131 @@
-#service {
-    /* Ensure spacing between slider items */
-    .services-slider .slider-item {
-        margin: 0 15px;
+#services {
+    /* Header Styling */
+    .wrap-header {
+        max-width: rem(770);
     }
 
+    /* Services Slider */
+    .services-slider {
+        overflow: hidden; /* Prevent content overflow */
+        
+        .slider-item {
+            margin: 0 rem(15); /* Ensure spacing between slider items */
+        }
+    }
+
+    .slick-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .slick-list {
+        padding: rem(10) 20% 0 rem(8) !important; /* Adjust padding for the slider */
+    }
+
+    /* Card Styling */
     .card {
-        border-radius: 8px;
+        border-radius: rem(8);
         overflow: hidden;
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        height: 100%; /* Ensure all cards have equal height */
+        transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for shadow and scale */
+
+        &:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+            transform: translateY(-5px); /* Lift the card slightly */
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: auto; /* Maintain proportional scaling */
+            aspect-ratio: 16 / 9; /* Standard aspect ratio */
+            object-fit: cover; /* Crop the image while maintaining ratio */
+            object-position: center; /* Center the cropped portion */
+            border-top-left-radius: rem(8);
+            border-top-right-radius: rem(8);
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column; /* Stack content vertically */
+            height: 100%; /* Fill the card height */
+        }
+
+        .card-title {
+            margin-bottom: rem(10); /* Space below the title */
+        }
+
+        .card-text {
+            flex-grow: 1; /* Stretch to align with neighbors */
+            margin-bottom: rem(10); /* Space between text and button */
+        }
+
+        .btn-service {
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: auto; /* Push button to the bottom */
+            align-self: flex-start; /* Align button to the left */
+            transition: all $speed ease-in-out;
+
+            i {
+                margin-left: rem(10);
+                font-size: rem(14);
+            }
+        }
+
+        &:hover .btn-service {
+            color: $lt-red; /* Change to desired hover color */
+        }
     }
 
-    .card img {
-        max-width: 100%;
-        height: auto;
+    // Tablet Styles
+	// ________________________________________________________
+	@include respond-below(lg) {    
+        margin-right: calc(-1 * var(--bs-gutter-x));
+
+        .card-img-top {
+            aspect-ratio: 4 / 3; /* Adjust aspect ratio for mobile */
+        }
+
+        .services-slider .slick-slide {
+            margin-right: rem(15); /* Adjust spacing between slides */
+        }
+
+        .services-slider .slick-list {
+            padding-right: rem(15); /* Fit slider correctly */
+        }
+
+        .slick-dots {
+            position: relative;
+            bottom: 0;
+            padding-right: rem(30);
+
+            li {
+                width: rem(10);
+
+                button:before {
+                    color: $lt-red;
+                }
+            }
+        }
+    }
+
+    // Mobile Styles
+	// ________________________________________________________
+	@include respond-below(md) {    
+        .services-slider .slick-slide {
+            margin-right: rem(10); /* Adjust spacing for tablets */
+        }
+
+        .services-slider .slick-list {
+            padding-right: rem(10); /* Fit slider correctly for tablets */
+        }
     }
 }

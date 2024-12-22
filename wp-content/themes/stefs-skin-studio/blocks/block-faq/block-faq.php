@@ -1,4 +1,4 @@
-<section class="py-5 bg-white">
+<section class="section-faq">
     <div class="container">
         <!-- Section Heading -->
         <div class="mb-4">

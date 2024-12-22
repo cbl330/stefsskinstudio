@@ -8,7 +8,7 @@ $content_block_option = get_field('content_block_options'); // Retrieve selected
     $simple_content = get_field('simple_content_block');
     if ($simple_content): // Check if repeater field has rows
     ?>
-        <section class="py-5 bg-white">
+        <section class="section-image-content">
             <div class="container">
                 <?php foreach ($simple_content as $row): ?>
                     <?php 

@@ -1,4 +1,4 @@
-<section id="testimonies" class="section-testimonies py-5 position-relative">
+<section id="testimonies" class="section-testimonies position-relative">
     <div class="container text-center">
         <!-- Star Rating -->
         <div class="mb-3">
