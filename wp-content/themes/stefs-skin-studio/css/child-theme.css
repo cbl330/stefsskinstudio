@@ -15551,6 +15551,7 @@ iframe {
 /* Set base font to Lato across the site */
 body {
   font-family: "Lato", sans-serif;
+  line-height: 1.75;
 }
 
 /* Set all headers to use Signika */

@@ -70,7 +70,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 											if (has_nav_menu('footer_menu')) :
 												wp_nav_menu([
 													'theme_location' => 'footer_menu',
-													'menu_class'     => 'nav mb-3 flex-column flex-lg-row',
+													'menu_class'     => 'nav mb-3 mb-lg-0 flex-column flex-lg-row justify-content-between',
 													'container'      => false,
 													'link_before'    => '',
 													'link_after'     => '',
