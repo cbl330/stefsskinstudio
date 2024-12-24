@@ -15959,7 +15959,7 @@ input {
     padding-bottom: 1.25rem;
   }
   #footer .wrap-left {
-    max-width: 28.75rem;
+    max-width: 31.25rem;
   }
   #footer .wrap-right {
     display: flex;
@@ -15991,7 +15991,7 @@ input {
   }
   #footer .wrap-nav li {
     font-weight: 700;
-    padding: 0 1.3020833333vw 0.625rem 0;
+    padding: 0 0.78125vw 0.625rem 0;
   }
   #footer .wrap-contact {
     order: 2;
