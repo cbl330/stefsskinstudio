@@ -159,7 +159,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 									<!-- End Terms Wrap -->
 
 									<!-- Start Social Wrap -->
-									<div class="wrap-social d-none d-lg-flex justify-content-center">
+									<div class="wrap-social d-none d-lg-flex justify-content-end">
 										<a href="#" class="facebook me-3"><i class="fab fa-facebook-f"></i></a>
 										<a href="#" class="instagram me-3"><i class="fab fa-instagram"></i></a>
 										<a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
