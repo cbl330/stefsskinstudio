@@ -15604,6 +15604,19 @@ a h1, a .h1, a h2, a .h2, a h3, a .h3, a h4, a .h4, a h5, a .h5, a h6, a .h6, a 
   text-decoration: none;
 }
 
+#footer a {
+  color: #1E1A19;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+#footer a:hover, #footer a:focus, #footer a:focus-visible, #footer a:active {
+  color: #FF2D74;
+}
+
+html {
+  overflow-x: hidden;
+}
+
 section {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -15663,6 +15676,14 @@ section {
 nav li {
   list-style: none;
   font-size: 1.125rem;
+}
+
+input {
+  border-color: #FFB843 !important;
+}
+
+.small {
+  font-size: 0.75rem;
 }
 
 #header {
@@ -15858,6 +15879,141 @@ nav li {
 @media (min-width: 2500px) {
   #header .wrap-logo img {
     margin: 0 0 0 2.6041666667vw;
+  }
+}
+
+#footer {
+  border-top: 3px solid #FFB843;
+}
+#footer .mb {
+  margin-bottom: 0.9375rem;
+}
+#footer .row-footer-top {
+  margin: 0 auto;
+}
+#footer .container-bottom {
+  padding-top: 2.1875rem;
+  padding-bottom: 5rem;
+  background-color: #00E9C9;
+  border-top: 3px solid #FFB843;
+}
+#footer .wrap-all {
+  padding: 1.875rem 0;
+  border-bottom: 1px solid #FFB843;
+}
+#footer .wrap-logo {
+  text-align: center;
+}
+#footer .wrap-logo img {
+  width: 100%;
+  max-width: 6.25rem;
+}
+#footer .wrap-summary {
+  padding-bottom: 1.875rem;
+  border-bottom: 1px solid #FFB843;
+}
+#footer .wrap-nav li {
+  padding: 0.3125rem 0;
+}
+#footer .wrap-form {
+  padding-top: 1.875rem;
+  padding-bottom: 1.875rem;
+}
+#footer .wrap-copyright {
+  padding-bottom: 1.25rem;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #1E1A19;
+}
+#footer .wrap-terms {
+  padding-top: 1.25rem;
+  font-size: 0.875rem;
+}
+#footer .social-group {
+  font-size: 1.25rem;
+}
+#footer .terms {
+  font-weight: 700;
+  color: #D49938;
+  transition: all 0.3s ease-in-out;
+}
+#footer .terms:hover, #footer .terms:focus, #footer .terms:focus-visible, #footer .terms:active {
+  color: #FF2D74;
+}
+@media (min-width: 575px) {
+  #footer .wrap-form input {
+    border-radius: 0.375rem 0 0 0.375rem;
+  }
+  #footer .wrap-form button {
+    width: 100%;
+    max-width: 20%;
+    border-radius: 0 0.375rem 0.375rem 0;
+  }
+}
+@media (min-width: 992px) {
+  #footer .row-footer-top {
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+  #footer .container-bottom {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+  #footer .wrap-left {
+    max-width: 28.75rem;
+  }
+  #footer .wrap-right {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 50rem;
+  }
+  #footer .wrap-all {
+    padding: 0;
+    border-bottom: none;
+  }
+  #footer .wrap-branding {
+    display: flex;
+    align-items: end;
+    padding-bottom: 3.125rem;
+  }
+  #footer .wrap-logo {
+    width: 100%;
+    max-width: 8.75rem;
+    text-align: unset;
+  }
+  #footer .wrap-logo img {
+    max-width: 100%;
+    padding-right: 1.5625rem;
+  }
+  #footer .wrap-summary {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  #footer .wrap-nav li {
+    font-weight: 700;
+    padding: 0 1.3020833333vw 0.625rem 0;
+  }
+  #footer .wrap-contact {
+    order: 2;
+    padding: 2.1875rem 0 3.75rem;
+  }
+  #footer .wrap-contact a {
+    word-break: break-all;
+  }
+  #footer .wrap-form {
+    order: 1;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  #footer .wrap-copyright {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  #footer .wrap-terms {
+    padding-top: 0;
+  }
+  #footer .wrap-social {
+    flex: 1;
   }
 }
 
@@ -16260,6 +16416,7 @@ nav li {
     display: block;
   }
   #image-content-grid .row-image-content {
+    align-items: stretch;
     padding-bottom: 0;
   }
   #image-content-grid .row-image-content .wrap-content {
@@ -16303,10 +16460,15 @@ nav li {
   #image-content-grid .img-left img {
     border-radius: 0.5rem 0.5rem 0 0.5rem;
   }
+  #image-content-grid .wrap-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   #image-content-grid img {
     width: 100%;
     height: 100%;
-    aspect-ratio: unset;
+    aspect-ratio: 1/1;
     -o-object-fit: cover;
     object-fit: cover;
     -o-object-position: center;

@@ -36,3 +36,17 @@ a {
         text-decoration: none;
     }
 }
+
+// Footer Links
+#footer a {
+    color: $charcoal;
+    text-decoration: none;
+    transition: all $speed ease-in-out;
+
+    &:hover,
+    &:focus,
+    &:focus-visible,
+    &:active {
+        color: $lt-red;
+    }
+}

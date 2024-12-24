@@ -20,6 +20,10 @@
 // }
 
 // Global Settings
+html {
+	overflow-x: hidden;
+}
+
 section {
 	padding-top: rem(20);
 	padding-bottom: rem(20);
@@ -78,14 +82,19 @@ section {
 	}
 }
 
-// ------------------------------------------------
-// DEFAULT -- HEADER STYLES
-// ------------------------------------------------
-
 // Navigation List Item
 nav {
 	li {
 		list-style: none;
 		font-size: rem(18px);
 	}
+}
+
+// Form Styles
+input {
+	border-color: $lt-gold !important;
+}
+
+.small {
+	font-size: rem(12);
 }
