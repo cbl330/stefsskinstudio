@@ -16305,8 +16305,8 @@ input {
   transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for shadow and scale */
 }
 #services .card:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
-  transform: translateY(-5px); /* Lift the card slightly */
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+  transform: scale(1.03125) translateY(-5px);
 }
 #services .card img {
   max-width: 100%;
@@ -16352,6 +16352,9 @@ input {
 @media (max-width: 991px) {
   #services {
     margin-right: calc(-1 * var(--bs-gutter-x));
+  }
+  #services .card:hover {
+    transform: none;
   }
   #services .card-img-top {
     aspect-ratio: 4/3; /* Adjust aspect ratio for mobile */

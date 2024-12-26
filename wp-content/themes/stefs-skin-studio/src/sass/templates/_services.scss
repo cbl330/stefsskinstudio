@@ -33,8 +33,8 @@
         transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for shadow and scale */
 
         &:hover {
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
-            transform: translateY(-5px); /* Lift the card slightly */
+            box-shadow: 0 rem(8) rem(20) rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+            transform: scale(1.03125) translateY(-5px);
         }
 
         img {
@@ -89,6 +89,12 @@
 	// ________________________________________________________
 	@include respond-below(lg) {    
         margin-right: calc(-1 * var(--bs-gutter-x));
+
+        .card {
+            &:hover {
+                transform: none;
+            }
+        }
 
         .card-img-top {
             aspect-ratio: 4 / 3; /* Adjust aspect ratio for mobile */
