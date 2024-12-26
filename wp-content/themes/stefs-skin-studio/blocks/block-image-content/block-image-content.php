@@ -1,5 +1,5 @@
 <?php 
-$content_block_option = get_field('content_block_options'); // Retrieve selected block option
+    $content_block_option = get_field('content_block_options'); // Retrieve selected block option
 ?>
 
 <?php if ($content_block_option === 'simple'): ?>
@@ -12,55 +12,51 @@ $content_block_option = get_field('content_block_options'); // Retrieve selected
             <div class="container container-image-content">
                 <?php foreach ($simple_content as $row): ?>
                     <?php 
-                    $layout = $row['scb_content_layout']; // Image Right or Left
-                    $image = $row['scb_image_group']['scb_image'];
-                    $content = $row['scb_content_group'];
+                        $layout = $row['scb_content_layout']; // Image Right or Left
+                        $image = $row['scb_image_group']['scb_image'];
+                        $content = $row['scb_content_group'];
                     ?>
-                    <div class="row align-items-center mb-5">
+                    <!-- <div class="row row-image-content align-items-center mb-5"> -->
+                    <div class="row row-image-content <?php echo $layout === 'image-right' ? 'row-right' : 'row-left'; ?>">
                         <?php if ($layout === 'image-left'): ?>
-                            <!-- Image -->
-                            <div class="col-lg-6 mb-4 mb-lg-0">
-                                <img 
-                                    src="<?php echo esc_url($image); ?>" 
-                                    alt="<?php echo esc_attr__('Image for Simple Content', 'text-domain'); ?>" 
-                                    class="img-fluid rounded shadow"
-                                >
+                            <!-- Start Image Wrap - Img-Left -->
+                            <div class="wrap-image img-left col-lg-6 mb-4 mb-lg-0">
+                                <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr__('Image for Simple Content', 'text-domain'); ?>" class="image-simple">
                             </div>
+                            <!-- End Image Wrap - Img-Left -->
                         <?php endif; ?>
-                        <!-- Text Content -->
-                        <div class="col-lg-6">
+
+                        <!-- Start Content Wrap -->
+                        <div class="wrap-content col-lg-6">
                             <?php if (!empty($content['scb_sub_header'])): ?>
-                                <p class="text-muted"><?php echo esc_html($content['scb_sub_header']); ?></p>
+                                <!-- Subhead -->
+                                <p class="eyebrow-text"><?php echo esc_html($content['scb_sub_header']); ?></p>
                             <?php endif; ?>
                             <?php if (!empty($content['scb_header'])): ?>
-                                <h2 class="fw-bold mb-3"><?php echo esc_html($content['scb_header']); ?></h2>
+                                <!-- Header -->
+                                <h2 class="mb-3"><?php echo esc_html($content['scb_header']); ?></h2>
                             <?php endif; ?>
                             <?php if (!empty($content['scb_main_content'])): ?>
-                                <div><?php echo wp_kses_post($content['scb_main_content']); ?></div>
+                                <!-- Body Text -->
+                                <div class="wrap-text mb-4"><?php echo wp_kses_post($content['scb_main_content']); ?></div>
                             <?php endif; ?>
                             <?php if (!empty($content['scb_content_button'])): ?>
-                                <div class="d-flex mt-3">
-                                    <?php 
-                                    $first = true; // Track first button
-                                    foreach ($content['scb_content_button'] as $button): ?>
-                                        <a href="<?php echo esc_url($button['scb_button_link']); ?>" 
-                                           class="btn <?php echo $first ? 'btn-primary me-3' : 'btn-outline-secondary'; ?>">
-                                            <?php echo esc_html($button['scb_button_text']); ?>
-                                        </a>
-                                        <?php $first = false; // Ensure subsequent buttons are styled differently ?>
+                                <!-- Buttons - Max 2 -->
+                                <div class="wrap-btn">
+                                    <?php foreach ($content['scb_content_button'] as $button): ?>
+                                        <a href="<?php echo esc_url($button['scb_button_link']); ?>" class="btn"><?php echo esc_html($button['scb_button_text']); ?></a>
                                     <?php endforeach; ?>
                                 </div>
                             <?php endif; ?>
                         </div>
+                        <!-- End Content Wrap -->
+
                         <?php if ($layout === 'image-right'): ?>
-                            <!-- Image -->
-                            <div class="col-lg-6">
-                                <img 
-                                    src="<?php echo esc_url($image); ?>" 
-                                    alt="<?php echo esc_attr__('Image for Simple Content', 'text-domain'); ?>" 
-                                    class="img-fluid rounded shadow"
-                                >
+                            <!-- Start Image - Img-Right -->
+                            <div class="wrap-image img-right col-lg-6 mb-4 mb-lg-0">
+                                <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr__('Image for Simple Content', 'text-domain'); ?>" class="image-simple">
                             </div>
+                            <!-- End Image - Img-Right -->
                         <?php endif; ?>
                     </div>
                 <?php endforeach; ?>
@@ -85,11 +81,11 @@ $content_block_option = get_field('content_block_options'); // Retrieve selected
                     ?>
                     <div class="row row-image-content <?php echo $layout === 'image-right' ? 'row-right' : 'row-left'; ?>">
                         <?php if ($layout === 'image-left'): ?>
-                            <!-- Start Image Wrap -->
+                            <!-- Start Image Wrap - Img-Left -->
                             <div class="wrap-image img-left col-lg-6 mb-4 mb-lg-0">
                                 <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr__('Image for Grid Content', 'text-domain'); ?>" class="image-grid">
                             </div>
-                            <!-- End Image Wrap -->
+                            <!-- End Image Wrap - Img-Left -->
                         <?php endif; ?>
 
                         <!-- Start Content Wrap -->
@@ -109,8 +105,7 @@ $content_block_option = get_field('content_block_options'); // Retrieve selected
                             <?php if (!empty($content['gcb_content_button'])): ?>
                                 <!-- Buttons - Max 2 -->
                                 <div class="wrap-btn">
-                                    <?php 
-                                        foreach ($content['gcb_content_button'] as $button): ?>
+                                    <?php foreach ($content['gcb_content_button'] as $button): ?>
                                             <a href="<?php echo esc_url($button['gcb_button_link']); ?>" class="btn"><?php echo esc_html($button['gcb_button_text']); ?></a>
                                     <?php endforeach; ?>
                                 </div>
@@ -119,10 +114,11 @@ $content_block_option = get_field('content_block_options'); // Retrieve selected
                         <!-- End Content Wrap -->
 
                         <?php if ($layout === 'image-right'): ?>
-                            <!-- Image -->
+                            <!-- Start Image - Img-Right  -->
                             <div class="wrap-image img-right col-lg-6">
                                 <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr__('Image for Grid Content', 'text-domain'); ?>" class="image-grid">
                             </div>
+                            <!-- End Image - Img-Right  -->
                         <?php endif; ?>
                     </div>
                 <?php endforeach; ?>

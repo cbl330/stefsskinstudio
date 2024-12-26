@@ -15618,15 +15618,21 @@ html {
   overflow-x: hidden;
 }
 
-section {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
 @media (min-width: 768px) {
   section {
     padding-top: 3.125rem;
     padding-bottom: 3.125rem;
   }
+}
+
+body.home section {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+body:not(.home) section {
+  padding-top: 1.875rem;
+  padding-bottom: 1.875rem;
 }
 
 @media (min-width: 500px) {
@@ -16018,6 +16024,12 @@ input {
   }
 }
 
+.wrap-btn {
+  display: flex;
+  -moz-column-gap: 0.9375rem;
+  column-gap: 0.9375rem;
+}
+
 .btn, .woocommerce-notices-wrapper .woocommerce-message a.button, .woocommerce-info a.button, .wpcf7 input[type=submit] {
   padding: 0.625rem 1.25rem;
   background-color: #FFB843;
@@ -16371,8 +16383,108 @@ input {
   }
 }
 
-.section-image-content .btn:nth-child(2), .section-image-content .woocommerce-notices-wrapper .woocommerce-message a.button:nth-child(2), .woocommerce-notices-wrapper .woocommerce-message .section-image-content a.button:nth-child(2), .section-image-content .woocommerce-info a.button:nth-child(2), .woocommerce-info .section-image-content a.button:nth-child(2), .section-image-content .wpcf7 input[type=submit]:nth-child(2), .wpcf7 .section-image-content input[type=submit]:nth-child(2) {
-  display: none;
+@media (max-width: 767px) {
+  .section-image-content .btn:nth-child(2), .section-image-content .woocommerce-notices-wrapper .woocommerce-message a.button:nth-child(2), .woocommerce-notices-wrapper .woocommerce-message .section-image-content a.button:nth-child(2), .section-image-content .woocommerce-info a.button:nth-child(2), .woocommerce-info .section-image-content a.button:nth-child(2), .section-image-content .wpcf7 input[type=submit]:nth-child(2), .wpcf7 .section-image-content input[type=submit]:nth-child(2) {
+    display: none;
+  }
+}
+
+#image-content-simple .row-image-content {
+  position: relative;
+  padding-bottom: 1.25rem;
+}
+#image-content-simple .row-image-content:before {
+  content: url("/wp-content/themes/stefs-skin-studio/img/detail-left.svg");
+  position: absolute;
+  bottom: -1.875rem;
+  right: -1.875rem;
+  width: auto;
+  height: auto;
+  transform: rotate(270deg) scale(0.5);
+  display: inline-block;
+}
+#image-content-simple .row-left {
+  margin-bottom: 3.125rem;
+}
+#image-content-simple .row-right .wrap-content {
+  order: 2;
+}
+#image-content-simple .row-right .wrap-image {
+  order: 1;
+  margin-bottom: 1.875rem;
+}
+#image-content-simple img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3/2;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: top center;
+  object-position: top center;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+@media (min-width: 992px) {
+  #image-content-simple .img-left {
+    display: block;
+  }
+  #image-content-simple .row-image-content {
+    align-items: stretch;
+    padding-bottom: 0;
+  }
+  #image-content-simple .row-image-content .wrap-content {
+    position: relative;
+    padding: 5.625rem 3.75rem;
+  }
+  #image-content-simple .row-image-content:before {
+    display: none;
+  }
+  #image-content-simple .row-left {
+    margin-bottom: 0;
+  }
+  #image-content-simple .row-left .wrap-content:before {
+    position: absolute;
+    display: inline-block;
+    content: url("/wp-content/themes/stefs-skin-studio/img/detail-right.svg");
+    bottom: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    transform: rotate(90deg);
+  }
+  #image-content-simple .row-right .wrap-content {
+    order: unset;
+  }
+  #image-content-simple .row-right .wrap-image {
+    order: unset;
+    margin-bottom: 0;
+  }
+  #image-content-simple .row-right .wrap-content:before {
+    position: absolute;
+    display: inline-block;
+    content: url("/wp-content/themes/stefs-skin-studio/img/detail-left.svg");
+    bottom: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+  }
+  #image-content-simple .wrap-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #image-content-simple img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+    border-radius: 0.5rem;
+  }
+  #image-content-simple .wrap-image.col-lg-6 {
+    padding: 0 !important;
+  }
 }
 
 #image-content-grid .img-left {

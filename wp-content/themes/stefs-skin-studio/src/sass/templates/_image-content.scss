@@ -1,9 +1,11 @@
 // Start Global Block Styles
 // --------------------------------------
 .section-image-content {
-    .btn {
-        &:nth-child(2) {
-            display: none;                
+    @include respond-below(md) {
+        .btn {
+            &:nth-child(2) {
+                display: none;                
+            }
         }
     }
 }
@@ -13,7 +15,129 @@
 
 // Start Option - Simple
 // --------------------------------------
-#image-content-simple {}
+#image-content-simple {
+    .row {
+        &-image-content {
+            position: relative;
+            padding-bottom: rem(20);
+
+            &:before {
+                content: url('/wp-content/themes/stefs-skin-studio/img/detail-left.svg');
+                position: absolute;
+                bottom: rem(-30);
+                right: rem(-30);
+                width: auto;
+                height: auto;
+                transform: rotate(270deg) scale(.5);
+                display: inline-block;
+            }
+        }
+
+        &-left {
+            margin-bottom: rem(50);
+        }
+
+        &-right {
+            .wrap-content {
+                order: 2;
+            }
+
+            .wrap-image {
+                order: 1;
+                margin-bottom: rem(30);
+            }
+        }
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+        object-position: top center;
+        border-radius: rem(8) rem(8) 0 0;
+    }
+
+    // Desktop Styles
+	// ________________________________________________________
+	@include respond-above(lg) {
+        .img-left {
+            display: block;
+        }
+    
+        .row {
+            &-image-content {
+                align-items: stretch;
+                padding-bottom: 0;
+
+                .wrap-content {
+                    position: relative;
+                    padding: rem(90) rem(60);
+                }
+    
+                &:before {
+                    display: none;
+                }
+            }
+    
+            &-left {
+                margin-bottom: 0;
+
+                .wrap-content:before {
+                    position: absolute;
+                    display: inline-block;
+                    content: url('/wp-content/themes/stefs-skin-studio/img/detail-right.svg');
+                    bottom: 0;
+                    right: 0;
+                    width: auto;
+                    height: auto;
+                    transform: rotate(90deg);
+                }
+            }
+    
+            &-right {
+                .wrap-content {
+                    order: unset;
+                }
+    
+                .wrap-image {
+                    order: unset;
+                    margin-bottom: 0;
+                }
+
+                .wrap-content:before {
+                    position: absolute;
+                    display: inline-block;
+                    content: url('/wp-content/themes/stefs-skin-studio/img/detail-left.svg');
+                    bottom: 0;
+                    left: 0;
+                    width: auto;
+                    height: auto;
+                }
+            }
+        }
+
+        .wrap-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            object-position: center;
+            border-radius: rem(8);
+        }
+        
+        // Bootstrap Overrides
+        .wrap-image.col-lg-6 {
+            padding: 0 !important;
+        }
+    }
+}
 // --------------------------------------
 // End Option - Simple
 
