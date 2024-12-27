@@ -15791,8 +15791,7 @@ input {
   color: #fff;
 }
 #header .btn-book-now .nav-link {
-  font-size: clamp(20px, 1vw, 18px);
-  font-weight: 800;
+  font-weight: 700;
   color: #1E1A19;
 }
 #header .nav-service .dropdown-item:before {
