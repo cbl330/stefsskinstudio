@@ -150,8 +150,24 @@ function enqueue_slick_slider_cdn() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_slick_slider_cdn');
 
-
-
+/**
+ * Outputs pagination for a custom WP_Query.
+ *
+ * @param WP_Query $query The custom query object for which pagination is being rendered.
+ * @param string   $aria_label Optional. Accessible label for the pagination, defaults to 'Pagination'.
+ */
+function render_pagination($query, $aria_label = 'Pagination') {
+    if ($query->max_num_pages > 1) {
+        echo '<div class="pagination" aria-label="' . esc_attr($aria_label) . '">';
+        echo paginate_links(array(
+            'total'        => $query->max_num_pages,
+            'current'      => max(1, get_query_var('paged')),
+            'prev_text'    => '<<',
+            'next_text'    => '>>',
+        ));
+        echo '</div>';
+    }
+}
 
 
 // /**

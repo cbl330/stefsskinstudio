@@ -41,7 +41,7 @@
                             <div class="card-text">
                                 <p><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
                             </div>
-                            <div class="btn-service">Book Now <i class="fas fa-chevron-right"></i></div>
+                            <div class="btn-post">Book Now <i class="fas fa-chevron-right"></i></div>
                         </div>
                     </a>
                 </div>

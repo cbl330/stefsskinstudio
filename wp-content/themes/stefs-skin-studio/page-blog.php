@@ -21,101 +21,142 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<div class="row">
 
-			<?php
-			// Do the left sidebar check and open div#primary.
-			// get_template_part( 'global-templates/left-sidebar-check' );
-			?>
+    <main class="site-main" id="main">
+      <section id="blog-archive" class="section-blog-archive py-5">
+          <div class="container">
 
-			<main class="site-main" id="main">
+              <!-- Start Page Header Wrap -->
+              <div class="wrap-page-header mb-4 mb-lg-5">
+                  <!-- Breadcrumbs with Schema Markup -->
+                  <div class="breadcrumbs mb-3">
+                      <?php echo do_shortcode('[wpseo_breadcrumb]'); ?>
+                  </div>
+                  <h1 class="page-title"><?php the_title(); ?></h1>
+              </div>
+              <!-- End Page Header Wrap -->
 
-				<?php
-				// if ( have_posts() ) {
-					?>
-					<header class="page-header">
-						<?php
-						// the_archive_title( '<h1 class="page-title">', '</h1>' );
-						// the_archive_description( '<div class="taxonomy-description">', '</div>' );
-						?>
-					</header><!-- .page-header -->
-					<?php
-					// Start the loop.
-				// 	while ( have_posts() ) {
-				// 		the_post();
+              <?php
+              // Pagination settings
+              $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+              $posts_per_page = 12; // Number of posts per page
 
-				// 		/*
-				// 		 * Include the Post-Format-specific template for the content.
-				// 		 * If you want to override this in a child theme, then include a file
-				// 		 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				// 		 */
-				// 		get_template_part( 'loop-templates/content', get_post_format() );
-				// 	}
-				// } else {
-				// 	get_template_part( 'loop-templates/content', 'none' );
-				// }
-				?>
+              if ($paged == 1) {
+                  // Start Featured Post Row
+                  $featured_query = new WP_Query(array(
+                      'posts_per_page' => 1,
+                      'post_status'    => 'publish',
+                  ));
 
-			</main>
+                  if ($featured_query->have_posts()) : 
+                      while ($featured_query->have_posts()) : $featured_query->the_post(); ?>
+                          <!-- Start Featured Post -->
+                          <div class="row-featured row align-items-center mb-4">
+                              
+                              <!-- Start Image Wrap -->
+                              <div class="wrap-image col-lg-6">
+                                  <a href="<?php the_permalink(); ?>">
+                                      <?php 
+                                      if (has_post_thumbnail()) {
+                                          the_post_thumbnail('large', array('class' => 'img-fluid', 'loading' => 'lazy', 'alt' => get_the_title()));
+                                      } else { ?>
+                                          <img class="placeholder" src="https://via.placeholder.com/800x500" alt="Placeholder image">
+                                      <?php } ?>
+                                  </a>
+                              </div>
+                              <!-- End Image Wrap -->
 
-			<section class="py-5 bg-white">
-  <div class="container">
-    <!-- Breadcrumb and Title -->
-    <div class="mb-4">
-      <p class="text-muted mb-1">Home > Blog</p>
-      <h1 class="fw-bold">Explore Our Latest Insights</h1>
-    </div>
+                              <!-- Start Content Wrap -->
+                              <div class="wrap-content col-lg-6">
+                                  <!-- Category -->
+                                  <div class="category mb-2"><?php the_category(', '); ?></div>
+                                  <!-- Post Title -->
+                                  <h2 class="post-title mb-2">
+                                      <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                  </h2>
+                                  <!-- Post Excerpt -->
+                                  <p class="card-text excerpt mb-2"><?php echo wp_trim_words(get_the_excerpt(), 30, '...'); ?></p>
+                                  <!-- Button Wrap -->
+                                  <div class="wrap-btn">
+                                      <a href="<?php the_permalink(); ?>" class="btn-post">Read more <i class="fas fa-chevron-right"></i></a>
+                                  </div>
+                              </div>
+                              <!-- End Content Wrap -->
 
-    <!-- Featured Post -->
-    <div class="row align-items-center mb-5">
-      <div class="col-lg-6">
-        <img 
-          src="https://via.placeholder.com/800x500" 
-          alt="How to Achieve Glowing Skin" 
-          class="img-fluid rounded shadow"
-        >
-      </div>
-      <div class="col-lg-6">
-        <p class="text-muted">Category</p>
-        <h2 class="fw-bold">How to Achieve Glowing Skin</h2>
-        <p>
-          Stay ahead of the curve with the latest skincare innovations and trends. From groundbreaking products to timeless techniques, this guide will help you achieve the glowing skin you’ve always desired. Transform your beauty journey by integrating simple tips into your skincare routine.
-        </p>
-        <a href="#" class="text-primary fw-bold">Read more &rarr;</a>
-      </div>
-    </div>
+                          </div>
+                          <!-- End Featured Post -->
+                      <?php endwhile; 
+                      wp_reset_postdata();
+                  endif;
+              }
 
-    <!-- Blog Post Grid -->
-    <div class="row g-4">
-      <!-- Single Blog Post -->
-      <?php for ($i = 0; $i < 12; $i++): ?>
-        <div class="col-lg-4 col-md-6">
-          <div class="card border-0 shadow-sm h-100">
-            <img 
-              src="https://via.placeholder.com/600x400" 
-              class="card-img-top rounded-top" 
-              alt="Top 5 Skincare Trends This Season"
-            >
-            <div class="card-body">
-              <p class="text-muted mb-2">Category</p>
-              <h5 class="card-title fw-bold">Top 5 Skincare Trends This Season</h5>
-              <p class="card-text">
-                Stay on top of the trends and unlock the secrets to radiant skin! Learn how to elevate your skincare routine with these expert tips tailored to your needs.
-              </p>
-              <a href="#" class="text-primary fw-bold">Read more &rarr;</a>
-            </div>
+              // Query for additional posts
+              $offset = ($paged == 1) ? 1 : 0; // Skip the featured post only on the first page
+              $additional_query = new WP_Query(array(
+                  'posts_per_page' => $posts_per_page,
+                  'post_status'    => 'publish',
+                  'paged'          => $paged,
+                  'offset'         => $offset,
+              ));
+              ?>
+
+              <!-- Start Blog Post Grid -->
+              <div class="row-posts row">
+                  <?php 
+                  if ($additional_query->have_posts()) : 
+                      while ($additional_query->have_posts()) : $additional_query->the_post(); ?>
+                          <div class="col-lg-4 col-md-6">
+                              <div class="wrap-post mb-4" itemscope itemtype="https://schema.org/BlogPosting">
+                                  
+                                  <!-- Start Image Wrap -->
+                                  <div class="wrap-image">
+                                      <a href="<?php the_permalink(); ?>" itemprop="url">
+                                          <?php 
+                                          if (has_post_thumbnail()) {
+                                              the_post_thumbnail('medium', array('class' => 'card-img-top rounded-top', 'loading' => 'lazy', 'alt' => get_the_title()));
+                                          } else { ?>
+                                              <img src="https://via.placeholder.com/600x400" class="card-img-top rounded-top" alt="Placeholder image">
+                                          <?php } ?>
+                                      </a>
+                                  </div>
+                                  <!-- End Image Wrap -->
+
+                                  <!-- Start Content Wrap -->
+                                  <div class="wrap-content">
+                                      <!-- Category -->
+                                      <div class="category mb-2"><?php the_category(', '); ?></div>
+                                      <!-- Post Title -->
+                                      <h2 class="post-title mb-2" itemprop="headline">
+                                          <a href="<?php the_permalink(); ?>" itemprop="url"><?php the_title(); ?></a>
+                                      </h2>
+                                      <!-- Post Excerpt -->
+                                      <p class="card-text excerpt mb-2" itemprop="description">
+                                          <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
+                                      </p>
+                                      <!-- Button Wrap -->
+                                      <div class="wrap-btn">
+                                          <a href="<?php the_permalink(); ?>" class="btn-post">Read more <i class="fas fa-chevron-right"></i></a>
+                                      </div>
+                                  </div>
+                                  <!-- End Content Wrap -->
+
+                              </div>
+                          </div>
+                      <?php endwhile; 
+                      wp_reset_postdata();
+                  else : ?>
+                      <p>No posts found.</p>
+                  <?php endif; ?>
+              </div>
+              <!-- End Blog Post Grid -->
+
+              <!-- Start Pagination -->
+              <?php render_pagination($additional_query); ?>
+              <!-- End Pagination -->
+
           </div>
-        </div>
-      <?php endfor; ?>
-    </div>
-  </div>
-</section>
+      </section>
+    </main>
 
-			<?php
-			// Display the pagination component.
-			// understrap_pagination();
-
-			// Do the right sidebar check and close div#primary.
-			// get_template_part( 'global-templates/right-sidebar-check' );
-			?>
 
 		</div><!-- .row -->
 

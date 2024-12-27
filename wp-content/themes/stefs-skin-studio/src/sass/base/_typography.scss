@@ -38,6 +38,59 @@ a {
     }
 }
 
+// Breadcrumbs
+.breadcrumbs {
+    span {
+        font-size: rem(14);
+        font-weight: 700;
+    }
+    
+    span:not(.breadcrumb_last) {
+        padding-right: rem(8);
+    }
+
+    span.breadcrumb_last {
+        padding-left: rem(8);
+        color: $lt-red;
+
+    }
+
+    a {
+        color: $charcoal;
+        text-decoration: none;
+        transition: all $speed ease-in-out;
+
+        &:hover,
+        &:focus,
+        &:focus-visible,
+        &:active {
+            color: $dk-gold;
+        }
+    }
+}
+
+// Posts
+.post-title a {
+    color: $charcoal;
+    text-decoration: none;
+}
+
+// Categories
+.category a {
+    font-size: rem(14);
+    font-weight: 700;
+    color: $lt-red;
+    text-decoration: none;
+    transition: all $speed ease-in-out;
+
+    &:hover,
+    &:focus,
+    &:focus-visible,
+    &:active {
+        color: $dk-gold;
+    }
+}
+
 // Footer Links
 #footer a {
     color: $charcoal;

@@ -109,3 +109,26 @@ input {
 .small {
 	font-size: rem(12);
 }
+
+// Pagination
+.pagination {
+	justify-content: center;
+
+	span, a {
+		padding: 0 rem(5);
+		font-weight: 700;
+		color: $charcoal;
+		text-decoration: none;
+		transition: all $speed ease-in-out;
+
+		&:hover,
+		&:focus,
+		&:focus-visible {
+			color: $lt-red;
+		}
+	}
+
+	.current {
+		color: $lt-red;
+	}
+}

@@ -1,0 +1,35 @@
+.row-featured {
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+        border-radius: rem(8);
+        aspect-ratio: 3 / 2;
+
+        @include respond-below(lg) {
+            border-radius: rem(8) rem(8) 0 0;
+        }
+    }
+
+    .wrap-content {
+        @include respond-above(lg) {
+            padding: rem(30) rem(50);
+        }
+    }
+}
+
+#blog-archive {
+    .row-post img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+        aspect-ratio: 3 / 2;
+        border-radius: rem(8) rem(8) 0 0;
+    }
+
+    h2 {
+        font-size: clamp(24px, 4vw, 32px);
+    }
+}

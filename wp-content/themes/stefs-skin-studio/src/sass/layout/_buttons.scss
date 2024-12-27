@@ -27,3 +27,40 @@
         color: $white !important;
     }
 }
+
+.btn-post {
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: auto; /* Push button to the bottom */
+    align-self: flex-start; /* Align button to the left */
+    transition: all $speed ease-in-out;
+
+    i {
+        margin-left: rem(10);
+        font-size: rem(14);
+    }
+}
+
+// Card Buttons
+.card {
+    .btn-post {
+        font-weight: 700;
+        text-decoration: none;
+        margin-top: auto; /* Push button to the bottom */
+        align-self: flex-start; /* Align button to the left */
+        transition: all $speed ease-in-out;
+    
+        i {
+            margin-left: rem(10);
+            font-size: rem(14);
+        }
+    }
+
+    &:hover .btn-post {
+        color: $lt-red;
+    }
+}
+
+.btn-post:hover {
+    color: $lt-red;
+}

@@ -15568,7 +15568,7 @@ h1,
 
 h2,
 .h2 {
-  font-size: clamp(30px, 4vw, 48px);
+  font-size: clamp(24px, 4vw, 48px);
 }
 
 h3,
@@ -15603,6 +15603,42 @@ a {
 a h1, a .h1, a h2, a .h2, a h3, a .h3, a h4, a .h4, a h5, a .h5, a h6, a .h6, a p {
   color: #1E1A19;
   text-decoration: none;
+}
+
+.breadcrumbs span {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+.breadcrumbs span:not(.breadcrumb_last) {
+  padding-right: 0.5rem;
+}
+.breadcrumbs span.breadcrumb_last {
+  padding-left: 0.5rem;
+  color: #FF2D74;
+}
+.breadcrumbs a {
+  color: #1E1A19;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+.breadcrumbs a:hover, .breadcrumbs a:focus, .breadcrumbs a:focus-visible, .breadcrumbs a:active {
+  color: #D49938;
+}
+
+.post-title a {
+  color: #1E1A19;
+  text-decoration: none;
+}
+
+.category a {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #FF2D74;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+.category a:hover, .category a:focus, .category a:focus-visible, .category a:active {
+  color: #D49938;
 }
 
 #footer a {
@@ -15691,6 +15727,23 @@ input {
 
 .small {
   font-size: 0.75rem;
+}
+
+.pagination {
+  justify-content: center;
+}
+.pagination span, .pagination a {
+  padding: 0 0.3125rem;
+  font-weight: 700;
+  color: #1E1A19;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+.pagination span:hover, .pagination span:focus, .pagination span:focus-visible, .pagination a:hover, .pagination a:focus, .pagination a:focus-visible {
+  color: #FF2D74;
+}
+.pagination .current {
+  color: #FF2D74;
 }
 
 #header {
@@ -16050,6 +16103,72 @@ input {
   color: #fff !important;
 }
 
+.btn-post {
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: auto; /* Push button to the bottom */
+  align-self: flex-start; /* Align button to the left */
+  transition: all 0.3s ease-in-out;
+}
+.btn-post i {
+  margin-left: 0.625rem;
+  font-size: 0.875rem;
+}
+
+.card .btn-post {
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: auto; /* Push button to the bottom */
+  align-self: flex-start; /* Align button to the left */
+  transition: all 0.3s ease-in-out;
+}
+.card .btn-post i {
+  margin-left: 0.625rem;
+  font-size: 0.875rem;
+}
+.card:hover .btn-post {
+  color: #FF2D74;
+}
+
+.btn-post:hover {
+  color: #FF2D74;
+}
+
+.row-featured img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  border-radius: 0.5rem;
+  aspect-ratio: 3/2;
+}
+@media (max-width: 991px) {
+  .row-featured img {
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+}
+@media (min-width: 992px) {
+  .row-featured .wrap-content {
+    padding: 1.875rem 3.125rem;
+  }
+}
+
+#blog-archive .row-post img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  aspect-ratio: 3/2;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+#blog-archive h2, #blog-archive .h2 {
+  font-size: clamp(24px, 4vw, 32px);
+}
+
 #hero-home {
   position: relative;
   padding: 0 1.875rem;
@@ -16333,20 +16452,6 @@ input {
 #services .card .card-text {
   flex-grow: 1; /* Stretch to align with neighbors */
   margin-bottom: 0.625rem; /* Space between text and button */
-}
-#services .card .btn-service {
-  font-weight: 700;
-  text-decoration: none;
-  margin-top: auto; /* Push button to the bottom */
-  align-self: flex-start; /* Align button to the left */
-  transition: all 0.3s ease-in-out;
-}
-#services .card .btn-service i {
-  margin-left: 0.625rem;
-  font-size: 0.875rem;
-}
-#services .card:hover .btn-service {
-  color: #FF2D74; /* Change to desired hover color */
 }
 @media (max-width: 991px) {
   #services {
