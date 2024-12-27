@@ -16596,4 +16596,41 @@ input {
   }
 }
 
+#faq .accordion {
+  --bs-accordion-border-width: 0;
+  --bs-accordion-border-radius: 0;
+  --bs-accordion-inner-border-radius: 0;
+  --bs-accordion-btn-padding-x: 0;
+  --bs-accordion-btn-focus-border-color: $trans;
+  --bs-accordion-btn-focus-box-shadow: none;
+  --bs-accordion-body-padding-x: 0;
+  --bs-accordion-active-color: $charcoal;
+  --bs-accordion-active-bg: $trans;
+}
+#faq .accordion-button:after {
+  content: "\f078";
+  background-image: none;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  text-align: center;
+}
+#faq .accordion-button:not(.collapsed):after {
+  content: "\f078";
+  background-image: none;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  text-align: center;
+}
+#faq .wrap-item:first-child {
+  border-top: 1px solid #FFB843;
+  border-bottom: 1px solid #FFB843;
+}
+#faq .wrap-item:not(:first-child) {
+  border-bottom: 1px solid #FFB843;
+}
+#faq button {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
 /*# sourceMappingURL=child-theme.css.map */

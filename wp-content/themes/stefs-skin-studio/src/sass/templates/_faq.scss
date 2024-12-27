@@ -1,0 +1,49 @@
+#faq {
+    // Bootstrap Overrides
+    .accordion {
+        --bs-accordion-border-width: 0;
+        --bs-accordion-border-radius: 0;
+        --bs-accordion-inner-border-radius: 0;
+        --bs-accordion-btn-padding-x: 0;
+        --bs-accordion-btn-focus-border-color: $trans;
+        --bs-accordion-btn-focus-box-shadow: none;
+        --bs-accordion-body-padding-x: 0;
+        --bs-accordion-active-color: $charcoal;
+        --bs-accordion-active-bg: $trans;
+    }
+
+    .accordion-button:after {
+        content: "\f078";
+        background-image: none;
+        font-family: "Font Awesome 5 Free"; 
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .accordion-button:not(.collapsed):after {
+        content: "\f078";
+        background-image: none;
+        font-family: "Font Awesome 5 Free"; 
+        font-weight: 700;
+        text-align: center;
+    }
+
+    // FAQ Block Styles
+    .wrap {
+        &-accordion {}
+
+        &-item:first-child {
+            border-top: 1px solid $lt-gold;
+            border-bottom: 1px solid $lt-gold;
+        }
+
+        &-item:not(:first-child) {
+            border-bottom: 1px solid $lt-gold;
+        }
+    }
+
+    button {
+        font-size: rem(18);
+        font-weight: 700;
+    }
+}
