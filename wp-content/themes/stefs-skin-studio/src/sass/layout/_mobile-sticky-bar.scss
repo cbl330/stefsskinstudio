@@ -1,0 +1,68 @@
+#mobile-sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+
+    .container-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $lt-red;
+        border-top: 3px solid $lt-gold;
+    }
+
+    .wrap {
+        &-icon-group {
+            display: flex;
+        }
+
+        &-icon {
+            padding: rem(10) rem(15);
+            border-right: 2px solid $white;
+        }
+    }
+
+    i {
+        font-size: rem(25);
+        color: $white;
+    }
+
+    .consultation {
+        flex: 1;
+        padding: 0 rem(20);
+        color: $white;
+        font-size: rem(14);
+        font-weight: 700;
+        line-height: 1.25;
+    }
+
+    // Close Button
+    button {
+        display: flex;
+        justify-content: center;
+        background-color: $trans;
+        border: none;
+
+        i {
+            padding-right: rem(10);
+            font-size: rem(20);
+        }
+    }
+
+    // Extra Small Mobile Styles
+	// ________________________________________________________
+	@include respond-below(xxs) {    
+        .consultation {
+            display: none;
+        }
+    }
+
+    // Desktop Styles
+	// ________________________________________________________
+	@include respond-above(lg) {
+        display: none;
+    }
+}

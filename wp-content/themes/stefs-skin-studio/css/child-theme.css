@@ -15748,6 +15748,10 @@ input {
   color: #FF2D74;
 }
 
+hr {
+  border-color: #FFB843;
+}
+
 #header {
   position: relative;
   box-shadow: 0px 0px 20px 0px rgba(30, 26, 25, 0.1);
@@ -16292,6 +16296,61 @@ input {
     padding-right: 0.625rem; /* Fit slider correctly for tablets */
   }
 }
+#mobile-sticky-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+#mobile-sticky-bar .container-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FF2D74;
+  border-top: 3px solid #FFB843;
+}
+#mobile-sticky-bar .wrap-icon-group {
+  display: flex;
+}
+#mobile-sticky-bar .wrap-icon {
+  padding: 0.625rem 0.9375rem;
+  border-right: 2px solid #fff;
+}
+#mobile-sticky-bar i {
+  font-size: 1.5625rem;
+  color: #fff;
+}
+#mobile-sticky-bar .consultation {
+  flex: 1;
+  padding: 0 1.25rem;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+#mobile-sticky-bar button {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+}
+#mobile-sticky-bar button i {
+  padding-right: 0.625rem;
+  font-size: 1.25rem;
+}
+@media (max-width: 349px) {
+  #mobile-sticky-bar .consultation {
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  #mobile-sticky-bar {
+    display: none;
+  }
+}
+
 #hero-home {
   position: relative;
   padding: 0 1.875rem;
@@ -16820,6 +16879,51 @@ input {
 #faq button {
   font-size: 1.125rem;
   font-weight: 700;
+}
+
+#custom-wysiwyg .wrap-wysiwyg {
+  position: relative;
+  width: 100%;
+  max-width: 56.25rem;
+  margin: 0 auto;
+}
+#custom-wysiwyg .wrap-wysiwyg:before {
+  display: none;
+}
+#custom-wysiwyg .wrap-wysiwyg:after {
+  display: none;
+}
+#custom-wysiwyg .wrap-content {
+  padding: 1.875rem;
+}
+@media (min-width: 768px) {
+  #custom-wysiwyg .wrap-wysiwyg {
+    position: relative;
+    width: 100%;
+    max-width: 56.25rem;
+    margin: 0 auto;
+  }
+  #custom-wysiwyg .wrap-wysiwyg:before {
+    position: absolute;
+    display: inline-block;
+    content: url("/wp-content/themes/stefs-skin-studio/img/detail-right.svg");
+    top: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+  }
+  #custom-wysiwyg .wrap-wysiwyg:after {
+    position: absolute;
+    display: inline-block;
+    content: url("/wp-content/themes/stefs-skin-studio/img/detail-left.svg");
+    bottom: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+  }
+  #custom-wysiwyg .wrap-content {
+    padding: 4.6875rem;
+  }
 }
 
 /*# sourceMappingURL=child-theme.css.map */

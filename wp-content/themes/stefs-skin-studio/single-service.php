@@ -16,18 +16,16 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
-		<div class="row">
+		<div class="row py-5">
 
-      <?php
-				get_template_part('template-parts/hero', 'interior-page');
-			?>
+      <!-- Breadcrumbs with Schema Markup -->
+      <div class="breadcrumbs mb-3">
+        <?php echo do_shortcode('[wpseo_breadcrumb]'); ?>
+      </div>
+
+      <?php get_template_part('template-parts/hero', 'interior-page'); ?>
 
 			<main class="site-main" id="main">
-
-        <!-- Breadcrumbs with Schema Markup -->
-        <div class="breadcrumbs mb-3">
-          <?php echo do_shortcode('[wpseo_breadcrumb]'); ?>
-        </div>
 
         <?php
           while ( have_posts() ) {

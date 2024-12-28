@@ -6743,6 +6743,11 @@
 	  }
 	})();
 
+	// Mobile Sticky Bar
+	document.querySelector('.close-btn').addEventListener('click', function () {
+	  document.querySelector('.sticky-bar').style.display = 'none';
+	});
+
 	exports.Alert = alert;
 	exports.Button = button;
 	exports.Carousel = carousel;

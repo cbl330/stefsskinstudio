@@ -1,12 +1,12 @@
 <?php 
-$custom_wysiwyg = get_field('custom_wysiwyg'); // Retrieve the WYSIWYG content
+    $custom_wysiwyg = get_field('custom_wysiwyg'); // Retrieve the WYSIWYG content
 ?>
 
 <?php if (!empty($custom_wysiwyg)): ?>
-    <section class="section-wysiwyg">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
+    <section id="custom-wysiwyg" class="section-wysiwyg">
+        <div class="container container-wysiwyg">
+            <div class="wrap-wysiwyg">
+                <div class="wrap-content">
                     <?php echo wp_kses_post($custom_wysiwyg); ?>
                 </div>
             </div>
