@@ -1,0 +1,22 @@
+{
+    "name": "block-related-posts",
+    "title": "Block - Related Posts",
+    "description": "Display an array of related posts",
+    "editorStyle": [
+        "file:./block-related-posts.css"
+    ],
+    "category": "sss-blocks",
+    "icon": "admin-users",
+    "keywords": [
+        "post",
+        "author"
+    ],
+    "postTypes": [
+        "post",
+        "page"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "block-related-posts.php"
+    }
+}

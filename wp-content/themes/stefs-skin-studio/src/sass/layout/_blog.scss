@@ -1,3 +1,5 @@
+// Start Blog Archive Styles
+// ------------------------------------
 .row-featured {
     img {
         width: 100%;
@@ -33,3 +35,105 @@
         font-size: clamp(24px, 4vw, 32px);
     }
 }
+// ------------------------------------
+// End Blog Archive Styles
+
+// Start Blog Post Styles
+// ------------------------------------
+#single-post {
+    .post-image img,
+    .post-content img {
+        border-radius: rem(8);
+    }
+
+    .post-image img {
+        width: 100%;
+        height: auto;
+        max-height: rem(750);
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .post-content {
+        width: 100%;
+        max-width: rem(768);
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .meta {
+        display: inline-block;
+    }
+
+    .post-meta {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .author {
+        width: 100%;
+        font-weight: 700;
+    }
+
+    .wrap-details {
+        display: flex;
+        align-items: center;
+    }
+
+    .divider {
+        padding: 0 rem(10);
+        font-size: rem(5);
+    }
+
+    .social-group {
+        text-align: center;
+
+        a {
+            color: $charcoal;
+            transition: all $speed ease-in-out;
+
+            &:hover,
+            &:focus,
+            &:focus-visible {
+                color: $lt-red;
+            }
+        }
+
+        i {
+            font-size: rem(20);
+        }
+    }
+
+    .post-author {
+        border-top: 1px solid $lt-gold;
+    }
+
+    .related-posts {
+        .container {
+            padding: 0;
+        }
+    }
+
+    // Desktop Styles
+	// ________________________________________________________
+	@include respond-above(lg) {
+        .wrap-header-meta {
+            display: flex;
+            align-items: end;
+        }
+
+        .post-meta {
+            flex: 1;
+        }
+    
+        .social-group {
+            text-align: left;
+
+            i {
+                font-size: rem(18);
+            }
+        }
+    }
+}
+// ------------------------------------
+// End Blog Post Styles

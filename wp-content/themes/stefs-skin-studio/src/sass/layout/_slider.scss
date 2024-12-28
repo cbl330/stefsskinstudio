@@ -1,0 +1,60 @@
+/* Posts Slider */
+.posts-slider {
+    overflow: hidden; /* Prevent content overflow */
+    
+    .slider-item {
+        margin: 0 rem(15); /* Ensure spacing between slider items */
+    }
+}
+
+.slick-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slick-list {
+    padding: rem(10) 20% 0 rem(8) !important; /* Adjust padding for the slider */
+}
+
+// Tablet Styles
+// ________________________________________________________
+@include respond-below(lg) {
+    .posts-slider {
+        margin-right: calc(-1 * var(--bs-gutter-x));
+    }
+
+    .posts-slider .slick-slide {
+        margin-right: rem(15); /* Adjust spacing between slides */
+    }
+
+    .posts-slider .slick-list {
+        padding-right: rem(15); /* Fit slider correctly */
+    }
+
+    .slick-dots {
+        position: relative;
+        bottom: 0;
+        padding-right: rem(30);
+
+        li {
+            width: rem(10);
+
+            button:before {
+                color: $lt-red;
+            }
+        }
+    }
+}
+
+// Mobile Styles
+// ________________________________________________________
+@include respond-below(md) {    
+    .posts-slider .slick-slide {
+        margin-right: rem(10); /* Adjust spacing for tablets */
+    }
+
+    .posts-slider .slick-list {
+        padding-right: rem(10); /* Fit slider correctly for tablets */
+    }
+}

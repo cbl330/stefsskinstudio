@@ -24,6 +24,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			<main class="site-main" id="main">
 
+        <!-- Breadcrumbs with Schema Markup -->
+        <div class="breadcrumbs mb-3">
+          <?php echo do_shortcode('[wpseo_breadcrumb]'); ?>
+        </div>
+
         <?php
           while ( have_posts() ) {
             the_post();

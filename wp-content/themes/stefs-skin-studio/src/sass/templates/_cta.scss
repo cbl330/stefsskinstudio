@@ -1,6 +1,6 @@
 #cta {
     position: relative;
-    z-index: -1;
+    // z-index: -1;
     margin-left: calc(-1 * var(--bs-gutter-x));
     margin-right: calc(-1 * var(--bs-gutter-x));
 
@@ -13,6 +13,10 @@
         h2, .wrap-text {
             text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4); /* X-offset, Y-offset, blur-radius, color */
         }
+    }
+
+    .wrap-btn {
+        justify-content: center;
     }
 
     .mask {

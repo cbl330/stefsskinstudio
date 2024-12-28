@@ -58,7 +58,7 @@
 
         <!-- Tablet and Mobile Slider Layout -->
         <div class="d-lg-none">
-            <div class="row services-slider">
+            <div class="row posts-slider">
                 <?php
                 // Reuse query for slider layout
                 if ($services_query->have_posts()) : 

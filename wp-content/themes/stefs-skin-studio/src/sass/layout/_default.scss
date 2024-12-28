@@ -32,9 +32,11 @@ section {
 }
 
 body.home {
-	section {
-		padding-top: rem(20);
-		padding-bottom: rem(20);
+	@include respond-below(lg) {
+		section {
+			padding-top: rem(20);
+			padding-bottom: rem(20);
+		}
 	}
 }
 
