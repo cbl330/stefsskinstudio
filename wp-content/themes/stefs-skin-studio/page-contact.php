@@ -26,45 +26,60 @@ $container = get_theme_mod( 'understrap_container_type' );
 		?>
 
 			<?php
-			// Do the left sidebar check and open div#primary.
-			// get_template_part( 'global-templates/left-sidebar-check' );
+				// ACF Fields
+				$location = get_field('location', 'option');
+				$hours = get_field('hours', 'option');
+				$contact_info = get_field('contact_info', 'option');
 			?>
 
 			<main class="site-main" id="main">
 
-				<section class="py-5 bg-white">
+				<section class="py-4 py-lg-3">
 					<div class="container">
 						<div class="row">
 						<!-- Map and Contact Info -->
 						<div class="col-lg-5 mb-4 mb-lg-0">
-							<div class="text-center text-lg-start">
-							<p class="text-muted mb-1">We’re Here To Help!</p>
-							<h2 class="fw-bold mb-4">Contact Us: Your Skin’s Best Care Awaits!</h2>
-							</div>
 							<!-- Google Map -->
 							<div class="mb-4">
-							<iframe 
-								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1000!2d-80.005!3d32.780!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x12345!2sSample+Location!5e0!3m2!1sen!2sus!4v1672538485396!5m2!1sen!2sus"
-								width="100%"
-								height="250"
-								style="border:0; border-radius: 8px;"
-								allowfullscreen=""
-								loading="lazy"
-							></iframe>
+								<iframe 
+									src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1000!2d-80.005!3d32.780!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x12345!2sSample+Location!5e0!3m2!1sen!2sus!4v1672538485396!5m2!1sen!2sus"
+									width="100%"
+									height="250"
+									style="border:0; border-radius: 8px;"
+									allowfullscreen=""
+									loading="lazy">
+								</iframe>
 							</div>
 							<!-- Contact Info -->
-							<div class="text-center text-lg-start">
-							<p><strong>Our Location</strong><br>123 Skincare Lane<br>Mt. Pleasant, SC 29464</p>
-							<p><strong>Hours of Operation</strong><br>Monday to Friday: 9 AM - 6 PM<br>Saturday: 10 AM - 4 PM</p>
-							<p><strong>Contact Us</strong><br>
-								<a href="tel:+18435307859">(843) 530-7859</a><br>
-								<a href="mailto:stefanie@stefsskinstudio.com">stefanie@stefsskinstudio.com</a>
-							</p>
-							<p><strong>Follow Us</strong><br>
-								<a href="#"><i class="bi bi-facebook"></i></a>
-								<a href="#" class="ms-2"><i class="bi bi-instagram"></i></a>
-								<a href="#" class="ms-2"><i class="bi bi-twitter"></i></a>
-							</p>
+							<div class="wrap-contact">
+								<div class="row">
+									<?php if ($location): ?>
+										<div class="col-md-6 mb-3">
+											<p><?php echo $location; ?></p>
+										</div>
+									<?php endif; ?>
+
+									<?php if ($hours): ?>
+										<div class="col-md-6 mb-3">
+											<p><?php echo $hours; ?></p>
+										</div>
+									<?php endif; ?>
+
+									<?php if ($contact_info): ?>
+										<div class="col-md-6 mb-3">
+											<p><?php echo $contact_info; ?></p>
+										</div>
+									<?php endif; ?>
+
+									<div class="wrap-social col-md-6 mb-3">
+										<p class="fw-bold mb-2">Follow Us</p>
+										<div class="social-group d-flex justify-content-start">
+											<a href="#" class="facebook me-3"><i class="fab fa-facebook-f"></i></a>
+											<a href="#" class="instagram me-3"><i class="fab fa-instagram"></i></a>
+											<a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 

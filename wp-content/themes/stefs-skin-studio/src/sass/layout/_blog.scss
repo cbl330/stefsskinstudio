@@ -85,24 +85,24 @@
         font-size: rem(5);
     }
 
-    .social-group {
-        text-align: center;
+    // .social-group {
+    //     text-align: center;
 
-        a {
-            color: $charcoal;
-            transition: all $speed ease-in-out;
+    //     a {
+    //         color: $charcoal;
+    //         transition: all $speed ease-in-out;
 
-            &:hover,
-            &:focus,
-            &:focus-visible {
-                color: $lt-red;
-            }
-        }
+    //         &:hover,
+    //         &:focus,
+    //         &:focus-visible {
+    //             color: $lt-red;
+    //         }
+    //     }
 
-        i {
-            font-size: rem(20);
-        }
-    }
+    //     i {
+    //         font-size: rem(20);
+    //     }
+    // }
 
     .post-author {
         border-top: 1px solid $lt-gold;

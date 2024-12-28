@@ -15641,6 +15641,29 @@ a h1, a .h1, a h2, a .h2, a h3, a .h3, a h4, a .h4, a h5, a .h5, a h6, a .h6, a 
   color: #D49938;
 }
 
+.social-group {
+  text-align: center;
+}
+.social-group a {
+  color: #1E1A19;
+  transition: all 0.3s ease-in-out;
+}
+.social-group a:hover, .social-group a:focus, .social-group a:focus-visible {
+  color: #FF2D74;
+}
+.social-group i {
+  font-size: 1.25rem;
+}
+
+.wrap-contact a {
+  color: #1E1A19;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+.wrap-contact a:hover, .wrap-contact a:focus, .wrap-contact a:focus-visible, .wrap-contact a:active {
+  color: #FF2D74;
+}
+
 #footer a {
   color: #1E1A19;
   text-decoration: none;
@@ -16212,19 +16235,6 @@ hr {
 #single-post .divider {
   padding: 0 0.625rem;
   font-size: 0.3125rem;
-}
-#single-post .social-group {
-  text-align: center;
-}
-#single-post .social-group a {
-  color: #1E1A19;
-  transition: all 0.3s ease-in-out;
-}
-#single-post .social-group a:hover, #single-post .social-group a:focus, #single-post .social-group a:focus-visible {
-  color: #FF2D74;
-}
-#single-post .social-group i {
-  font-size: 1.25rem;
 }
 #single-post .post-author {
   border-top: 1px solid #FFB843;
