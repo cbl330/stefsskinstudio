@@ -1,14 +1,14 @@
 jQuery(document).ready(function ($) {
-    // Function to initialize or destroy the slider
-    function toggleSlider() {
+    // 1. Keep your existing toggle logic for .posts-slider
+    function togglePostsSlider() {
         if ($(window).width() >= 992) {
             // Destroy the slider if the viewport is 992px or wider
             if ($('.posts-slider').hasClass('slick-initialized')) {
-                $('.posts-slider').slick('unslick'); // Destroy the slider
-                $('.posts-slider').removeClass('slick-initialized'); // Ensure the class is removed
+                $('.posts-slider').slick('unslick'); // Destroy
+                $('.posts-slider').removeClass('slick-initialized');
             }
         } else {
-            // Initialize the slider if the viewport is less than 992px
+            // Initialize the slider if the viewport is < 992px
             if (!$('.posts-slider').hasClass('slick-initialized')) {
                 $('.posts-slider').slick({
                     dots: true,
@@ -36,55 +36,36 @@ jQuery(document).ready(function ($) {
         }
     }
 
-    // Run on page load
-    toggleSlider();
+    // 2. Initialize testimonies-slider ALWAYS (no toggling by width)
+    $('.testimonies-slider').slick({
+        dots: true,
+        arrows: true,
+        infinite: true,
+        speed: 400,
+        slidesToShow: 1,
+        fade: true,
+        autoplay: true,
+        autoplaySpeed: 8000,
+        adaptiveHeight: false,
+        cssEase: 'linear',
+        responsive: [
+            {
+                breakpoint: 768, // Mobile view
+                settings: {
+                    adaptiveHeight: true,
+                    autoplay: false,
+                    fade: false,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
+    });
 
-    // Re-check on window resize
+    // 3. Run toggle for .posts-slider on page load
+    togglePostsSlider();
+
+    // 4. Re-check posts-slider on window resize
     $(window).on('resize', function () {
-        toggleSlider();
+        togglePostsSlider();
     });
 });
-
-
-// jQuery(document).ready(function ($) {
-//     $('.posts-slider').slick({
-//         dots: true,
-//         arrows: false,
-//         infinite: true,     // Enable infinite scrolling
-//         speed: 500,         // Transition speed
-//         slidesToShow: 2,    // Show one slide at a time
-//         slidesToScroll: 1,  // Scroll one slide at a time
-//         autoplay: false,    // Disable autoplay
-//         autoplaySpeed: 5000, // Autoplay interval
-//         adaptiveHeight: true,
-//         responsive: [
-//             {
-//                 breakpoint: 992, // Tablet view
-//                 settings: {
-//                     // slidesToShow: 2,       // Fractional slides
-//                     slidesToScroll: 1,       // Scroll one slide at a time
-//                     centerMode: false,       // Align slides to the left
-//                     variableWidth: false     // Uniform slide widths
-//                 }
-//             },
-//             {
-//                 breakpoint: 768, // Mobile view
-//                 settings: {
-//                     slidesToShow: 1,
-//                     slidesToScroll: 1,
-//                     centerMode: false,
-//                     variableWidth: false,
-//                 }
-//             }
-//         ]
-//     });
-
-//     $('.posts-slider').on('setPosition', function () {
-//         var $slickList = $(this).find('.slick-list');
-//         var $activeSlide = $(this).find('.slick-active');
-//         var activeSlideHeight = $activeSlide.outerHeight();
-    
-//         $slickList.height(activeSlideHeight + 10); // Add a 10px buffer
-//     });
-    
-// });

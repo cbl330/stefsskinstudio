@@ -16313,7 +16313,7 @@ hr {
   align-items: center;
 }
 
-.slick-list {
+.post-slider .slick-list {
   padding: 0.625rem 20% 0 0.5rem !important; /* Adjust padding for the slider */
 }
 
@@ -16975,6 +16975,65 @@ hr {
   #custom-wysiwyg .wrap-content {
     padding: 4.6875rem;
   }
+}
+
+#testimonies {
+  position: relative;
+  padding: 1.875rem;
+}
+#testimonies:before {
+  position: absolute;
+  display: inline-block;
+  content: url("/wp-content/themes/stefs-skin-studio/img/detail-right.svg");
+  top: -1.875rem;
+  right: -1.875rem;
+  width: auto;
+  height: auto;
+  transform: scale(0.5);
+}
+#testimonies:after {
+  position: absolute;
+  display: inline-block;
+  content: url("/wp-content/themes/stefs-skin-studio/img/detail-left.svg");
+  bottom: -1.875rem;
+  left: -1.875rem;
+  width: auto;
+  height: auto;
+  transform: scale(0.5);
+}
+@media (min-width: 768px) {
+  #testimonies {
+    padding: 5rem 15.1041666667vw;
+  }
+  #testimonies:before {
+    top: 0;
+    right: 0;
+    transform: scale(1);
+  }
+  #testimonies:after {
+    bottom: 0;
+    left: 0;
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 768px) {
+  #testimonies {
+    margin-top: 3.125rem;
+    margin-bottom: 3.125rem;
+  }
+}
+
+@media (max-width: 991px) {
+  body.home #testimonies {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+body:not(.home) #testimonies {
+  margin-top: 1.875rem;
+  margin-bottom: 1.875rem;
 }
 
 /*# sourceMappingURL=child-theme.css.map */

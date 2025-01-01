@@ -1,0 +1,68 @@
+#testimonies {
+    position: relative;
+    padding: rem(30);
+
+    &:before {
+        position: absolute;
+        display: inline-block;
+        content: url('/wp-content/themes/stefs-skin-studio/img/detail-right.svg');
+        top: rem(-30);
+        right: rem(-30);
+        width: auto;
+        height: auto;
+        transform: scale(.5);
+    }
+
+    &:after {
+        position: absolute;
+        display: inline-block;
+        content: url('/wp-content/themes/stefs-skin-studio/img/detail-left.svg');
+        bottom: rem(-30);
+        left: rem(-30);
+        width: auto;
+        height: auto;
+        transform: scale(.5);
+    }
+
+    // Desktop Styles
+	// ________________________________________________________
+	@include respond-above(md) {
+        padding: rem(80) vw(290);
+
+        &:before {
+            top: 0;
+            right: 0;
+            transform: scale(1);
+        }
+
+        &:after {
+            bottom: 0;
+            left: 0;
+            transform: scale(1);
+        }
+    }
+}
+
+// Block Specific Margins -- Replaces section padding layout in defaults
+#testimonies {
+	@include respond-above(md) {
+		margin-top: rem(50);
+		margin-bottom: rem(50);
+	}
+}
+
+body.home {
+	@include respond-below(lg) {
+		#testimonies {
+			margin-top: rem(20);
+			margin-bottom: rem(20);
+		}
+	}
+}
+
+body:not(.home) {
+	#testimonies {
+		margin-top: rem(30);
+		margin-bottom: rem(30);
+	}
+}
