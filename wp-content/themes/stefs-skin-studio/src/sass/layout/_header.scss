@@ -7,6 +7,10 @@
 		padding: 0;
 	}
 
+	.navbar-brand {
+		display: flex;
+	}
+
 	.container {
 		&-header {
 			padding: 0;
@@ -18,10 +22,9 @@
 	.wrap {
 		&-logo {
 			img {
-				width: auto;
-				height: 100%;
-				max-height: rem(35);
-				margin: rem(10) 0 rem(10) rem(30);
+				width: 100%;
+				max-width: rem(160);
+				margin: 0 0 0 rem(30);
 			}	
 		}
 
@@ -109,7 +112,7 @@
 
 	.btn {
 		&-book-now {
-			padding: rem(20) rem(30);
+			padding: rem(15) rem(30);
 			margin: rem(30) 0 0 0;
 			background-color: $lt-green;
 			text-align: center;
@@ -180,8 +183,7 @@
 		.wrap {
 			&-logo {
 				img {
-					max-height: rem(50);
-					margin: 0 0 0 vw(240);
+					max-width: vw(200);
 					padding: rem(5) 0;
 				}	
 			}

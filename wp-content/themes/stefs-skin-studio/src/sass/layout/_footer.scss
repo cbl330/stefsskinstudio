@@ -72,21 +72,21 @@
         }
     }
 
-    @include respond-above(sm-m) {    
-        .wrap {
-            &-form {
-                input {
-                    border-radius: rem(6) 0 0 rem(6);
-                }
+    // @include respond-above(sm-m) {    
+    //     .wrap {
+    //         &-form {
+    //             input {
+    //                 // border-radius: rem(6) 0 0 rem(6);
+    //             }
 
-                button {
-                    width: 100%;
-                    max-width: 20%;
-                    border-radius: 0 rem(6) rem(6) 0;
-                }
-            }
-        }
-    }
+    //             // .gform-button {
+    //             //     width: 100%;
+    //             //     max-width: 20%;
+    //             //     border-radius: 0 rem(6) rem(6) 0;
+    //             // }
+    //         }
+    //     }
+    // }
 
     // Desktop Styles
 	// ________________________________________________________

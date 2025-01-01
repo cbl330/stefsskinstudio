@@ -114,11 +114,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 						</div>
 
 						<div class="wrap-form">
-							<p class="fw-bold mb-3">Get the latest skincare tips, promotions, and exclusive offers!</p>
-							<form class="d-flex flex-column flex-sm-row mb-3">
-								<input type="email" class="form-control mb-3 mb-sm-0" placeholder="Enter your email" />
-								<button type="submit" class="btn">Sign Up</button>
-							</form>
+							<?php if ($form_title = get_field('footer_form_title', 'option')): ?>
+								<p class="fw-bold mb-3"><?php echo $form_title; ?></p>
+							<?php endif; ?>
+							<?php if ($form = get_field('sign_up_form_shortcode', 'option')): ?>
+								<form class="d-flex flex-column flex-md-row mb-3">
+									<?php echo do_shortcode($form); ?>
+								</form>
+							<?php endif; ?>
 							<p class="small">
 								By clicking Sign Up you're confirming that you agree with our
 								<a href="#" class="terms">Terms and Conditions</a>.

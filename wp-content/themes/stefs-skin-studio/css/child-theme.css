@@ -15673,6 +15673,56 @@ a h1, a .h1, a h2, a .h2, a h3, a .h3, a h4, a .h4, a h5, a .h5, a h6, a .h6, a 
   color: #FF2D74;
 }
 
+.gform_wrapper {
+  width: 100%;
+}
+.gform_wrapper input, .gform_wrapper textarea, .gform_wrapper select {
+  border-color: #FFB843 !important;
+}
+
+#footer .gform-button, #footer .gform_button, #contact-section .gform-button, #contact-section .gform_button {
+  padding: 0.625rem 1.25rem;
+  background-color: #FFB843;
+  color: #1E1A19;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  border: 1px solid #FFB843;
+  border-radius: 0.3125rem;
+  transition: all 0.3s ease-in-out;
+}
+#footer .gform-button:hover, #footer .gform_button:hover, #contact-section .gform-button:hover, #contact-section .gform_button:hover {
+  background-color: #FF2D74;
+  color: #fff;
+  border: 1px solid #FF2D74;
+  box-shadow: 0px 0px 20px 0px rgba(30, 26, 25, 0.1);
+}
+#footer .gform-button:active, #footer .gform_button:active, #contact-section .gform-button:active, #contact-section .gform_button:active {
+  background-color: #FF2D74 !important;
+  border: none !important;
+  color: #fff !important;
+}
+
+#footer .gform-theme--foundation .gform_fields {
+  grid-row-gap: 1.25rem;
+  grid-column-gap: 0;
+}
+#footer .gform-button {
+  width: 100%;
+}
+#footer .gform_footer {
+  display: none;
+}
+@media (min-width: 640px) {
+  #footer .gform_wrapper .form-input input {
+    border-radius: 0.375rem 0 0 0.375rem;
+    border-right: 0px solid transparent;
+  }
+  #footer .gform-button {
+    border-radius: 0 0.375rem 0.375rem 0;
+  }
+}
+
 html {
   overflow-x: hidden;
 }
@@ -15746,10 +15796,6 @@ nav li {
   font-size: 1.125rem;
 }
 
-input {
-  border-color: #FFB843 !important;
-}
-
 .small {
   font-size: 0.75rem;
 }
@@ -15775,6 +15821,10 @@ hr {
   border-color: #FFB843;
 }
 
+.row-contact {
+  --bs-gutter-x: 4rem;
+}
+
 #header {
   position: relative;
   box-shadow: 0px 0px 20px 0px rgba(30, 26, 25, 0.1);
@@ -15783,16 +15833,18 @@ hr {
 #header .navbar {
   padding: 0;
 }
+#header .navbar-brand {
+  display: flex;
+}
 #header .container-header {
   padding: 0;
   background-color: #fff;
   border-bottom: 3px solid #00E9C9;
 }
 #header .wrap-logo img {
-  width: auto;
-  height: 100%;
-  max-height: 2.1875rem;
-  margin: 0.625rem 0 0.625rem 1.875rem;
+  width: 100%;
+  max-width: 10rem;
+  margin: 0 0 0 1.875rem;
 }
 #header .wrap-menu-toggle {
   display: flex;
@@ -15859,7 +15911,7 @@ hr {
   color: #FF2D74;
 }
 #header .btn-book-now {
-  padding: 1.25rem 1.875rem;
+  padding: 0.9375rem 1.875rem;
   margin: 1.875rem 0 0 0;
   background-color: #00E9C9;
   text-align: center;
@@ -15909,8 +15961,7 @@ hr {
     align-items: stretch;
   }
   #header .wrap-logo img {
-    max-height: 3.125rem;
-    margin: 0 0 0 12.5vw;
+    max-width: 10.4166666667vw;
     padding: 0.3125rem 0;
   }
   #header .wrap-menu-toggle {
@@ -16026,16 +16077,6 @@ hr {
 }
 #footer .terms:hover, #footer .terms:focus, #footer .terms:focus-visible, #footer .terms:active {
   color: #FF2D74;
-}
-@media (min-width: 575px) {
-  #footer .wrap-form input {
-    border-radius: 0.375rem 0 0 0.375rem;
-  }
-  #footer .wrap-form button {
-    width: 100%;
-    max-width: 20%;
-    border-radius: 0 0.375rem 0.375rem 0;
-  }
 }
 @media (min-width: 992px) {
   #footer .row-footer-top {
