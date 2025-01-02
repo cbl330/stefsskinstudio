@@ -16313,7 +16313,7 @@ hr {
   align-items: center;
 }
 
-.post-slider .slick-list {
+.posts-slider .slick-list {
   padding: 0.625rem 20% 0 0.5rem !important; /* Adjust padding for the slider */
 }
 
