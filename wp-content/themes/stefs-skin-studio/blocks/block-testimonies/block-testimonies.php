@@ -1,6 +1,6 @@
 <?php
 // ACF Repeater Field
-$testimony_slides = get_field('testimony_slide');
+$testimony_slides = get_field('review_slide', 'option');
 
 if ( $testimony_slides ) : ?>
 <section id="testimonies" class="section-testimonies position-relative">
@@ -9,8 +9,8 @@ if ( $testimony_slides ) : ?>
         <!-- Slick Slider Container -->
         <div class="testimonies-slider"> 
             <?php foreach ( $testimony_slides as $slide ) : 
-                $testimony_text = $slide['testimony_text'];
-                $testimony_name = $slide['testimony_name'];
+                $testimony_text = $slide['review_text'];
+                $testimony_name = $slide['review_name'];
                 ?>
                 
                 <div class="testimony-slide">

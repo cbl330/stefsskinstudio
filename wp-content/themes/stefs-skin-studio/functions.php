@@ -140,9 +140,15 @@ function exclude_blocks_in_post_editor( $allowed_block_types, $block_editor_cont
             'acf/block-related-posts',
         ];
 
+        // If $allowed_block_types is not an array (could be true/false),
+        // just return it to avoid errors with array_filter.
+        if ( ! is_array( $allowed_block_types ) ) {
+            return $allowed_block_types;
+        }
+
         // Remove excluded blocks from the allowed list
         return array_filter( $allowed_block_types, function ( $block ) use ( $excluded_blocks ) {
-            return !in_array( $block, $excluded_blocks, true );
+            return ! in_array( $block, $excluded_blocks, true );
         });
     }
 
@@ -150,6 +156,32 @@ function exclude_blocks_in_post_editor( $allowed_block_types, $block_editor_cont
     return $allowed_block_types;
 }
 add_filter( 'allowed_block_types_all', 'exclude_blocks_in_post_editor', 10, 2 );
+
+
+
+// /**
+//  * Exclude specific blocks from the Gutenberg editor for posts.
+//  */
+// function exclude_blocks_in_post_editor( $allowed_block_types, $block_editor_context ) {
+//     // Check if we are in the post editor
+//     if ( isset( $block_editor_context->post ) && $block_editor_context->post->post_type === 'post' ) {
+//         // List of blocks to exclude in the editor
+//         $excluded_blocks = [
+//             'acf/block-cta',
+//             'acf/block-testimonies',
+//             'acf/block-related-posts',
+//         ];
+
+//         // Remove excluded blocks from the allowed list
+//         return array_filter( $allowed_block_types, function ( $block ) use ( $excluded_blocks ) {
+//             return !in_array( $block, $excluded_blocks, true );
+//         });
+//     }
+
+//     // Return all blocks for other contexts
+//     return $allowed_block_types;
+// }
+// add_filter( 'allowed_block_types_all', 'exclude_blocks_in_post_editor', 10, 2 );
 
 // /**
 //  * Register ACF Gutenberg Blocks.

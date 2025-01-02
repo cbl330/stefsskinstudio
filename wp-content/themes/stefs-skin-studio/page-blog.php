@@ -57,9 +57,9 @@ $container = get_theme_mod( 'understrap_container_type' );
                                             <a href="<?php the_permalink(); ?>">
                                                 <?php 
                                                 if (has_post_thumbnail()) {
-                                                    the_post_thumbnail('large', array('class' => 'img-fluid', 'loading' => 'lazy', 'alt' => get_the_title()));
+                                                    the_post_thumbnail('large', array('class' => 'img-fluid shadow', 'loading' => 'lazy', 'alt' => get_the_title()));
                                                 } else { ?>
-                                                    <img class="placeholder" src="https://via.placeholder.com/800x500" alt="Placeholder image">
+                                                    <img class="shadow" src="<?php echo get_stylesheet_directory_uri(); ?>/img/image-placeholder.jpg" alt="Placeholder image">
                                                 <?php } ?>
                                             </a>
                                         </div>
@@ -108,13 +108,13 @@ $container = get_theme_mod( 'understrap_container_type' );
                                         <div class="wrap-post mb-4" itemscope itemtype="https://schema.org/BlogPosting">
                                             
                                             <!-- Start Image Wrap -->
-                                            <div class="wrap-image">
+                                            <div class="wrap-image pb-2">
                                                 <a href="<?php the_permalink(); ?>" itemprop="url">
                                                     <?php 
                                                     if (has_post_thumbnail()) {
-                                                        the_post_thumbnail('medium', array('class' => 'card-img-top rounded-top', 'loading' => 'lazy', 'alt' => get_the_title()));
+                                                        the_post_thumbnail('medium', array('class' => 'card-img-top rounded-top shadow', 'loading' => 'lazy', 'alt' => get_the_title()));
                                                     } else { ?>
-                                                        <img src="https://via.placeholder.com/600x400" class="card-img-top rounded-top" alt="Placeholder image">
+                                                        <img class="card-img-top rounded-top shadow" src="<?php echo get_stylesheet_directory_uri(); ?>/img/image-placeholder.jpg" alt="Placeholder image">
                                                     <?php } ?>
                                                 </a>
                                             </div>
