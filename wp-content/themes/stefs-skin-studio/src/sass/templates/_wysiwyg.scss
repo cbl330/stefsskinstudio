@@ -1,51 +1,54 @@
 #custom-wysiwyg {
-    .wrap-wysiwyg {
-        position: relative;
-        width: 100%;
-        max-width: rem(900);
-        margin: 0 auto;
+    max-width: rem(850);
+    margin: 0 auto;
 
-        &:before { display: none; }
+    // .wrap-wysiwyg {
+    //     position: relative;
+    //     width: 100%;
+    //     // max-width: rem(850);
+    //     margin: 0 auto;
 
-        &:after { display: none; }
-    }
+    //     &:before { display: none; }
 
-    .wrap-content {
-        padding: rem(30);
-    }
+    //     &:after { display: none; }
+    // }
 
-    // Desktop Styles
-	// ________________________________________________________
-	@include respond-above(md) {
-        .wrap-wysiwyg {
-            position: relative;
-            width: 100%;
-            max-width: rem(900);
-            margin: 0 auto;
+    // .wrap-content {
+    //     // padding: rem(30);
+    // }
+
+    // // Desktop Styles
+	// // ________________________________________________________
+	// @include respond-above(md) {
+    //     .wrap-wysiwyg {
+    //         // position: relative;
+    //         // width: 100%;
+    //         // max-width: rem(900);
+    //         // margin: 0 auto;
     
-            &:before {
-                position: absolute;
-                display: inline-block;
-                content: url('/wp-content/themes/stefs-skin-studio/img/detail-right.svg');
-                top: 0;
-                right: 0;
-                width: auto;
-                height: auto;
-            }
+    //         // &:before {
+    //         //     position: absolute;
+    //         //     display: inline-block;
+    //         //     content: url('/wp-content/themes/stefs-skin-studio/img/detail-right.svg');
+    //         //     top: 0;
+    //         //     right: 0;
+    //         //     width: auto;
+    //         //     height: auto;
+    //         // }
     
-            &:after {
-                position: absolute;
-                display: inline-block;
-                content: url('/wp-content/themes/stefs-skin-studio/img/detail-left.svg');
-                bottom: 0;
-                left: 0;
-                width: auto;
-                height: auto;
-            }
-        }
+    //         // &:after {
+    //         //     position: absolute;
+    //         //     display: inline-block;
+    //         //     content: url('/wp-content/themes/stefs-skin-studio/img/detail-left.svg');
+    //         //     bottom: 0;
+    //         //     left: 0;
+    //         //     width: auto;
+    //         //     height: auto;
+    //         // }
+    //     }
     
-        .wrap-content {
-            padding: rem(75);
-        }
-    }
+    //     // .wrap-content {
+    //         // padding: rem(75);
+    //     // }
+    // }
 }

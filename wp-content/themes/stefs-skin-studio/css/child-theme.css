@@ -15673,6 +15673,10 @@ a h1, a .h1, a h2, a .h2, a h3, a .h3, a h4, a .h4, a h5, a .h5, a h6, a .h6, a 
   color: #FF2D74;
 }
 
+ul, ol {
+  padding-left: 1.25rem;
+}
+
 .gform_wrapper {
   width: 100%;
 }
@@ -16481,6 +16485,12 @@ hr {
   display: flex;
   margin: 0 0 -1.5625vw 0;
 }
+#hero-internal .wrap-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
 #hero-internal .img-group {
   position: relative;
   min-width: 25.0625rem;
@@ -16896,6 +16906,10 @@ hr {
   }
 }
 
+#faq {
+  max-width: 53.125rem;
+  margin: 0 auto;
+}
 #faq .accordion {
   --bs-accordion-border-width: 0;
   --bs-accordion-border-radius: 0;
@@ -16933,49 +16947,9 @@ hr {
   font-weight: 700;
 }
 
-#custom-wysiwyg .wrap-wysiwyg {
-  position: relative;
-  width: 100%;
-  max-width: 56.25rem;
+#custom-wysiwyg {
+  max-width: 53.125rem;
   margin: 0 auto;
-}
-#custom-wysiwyg .wrap-wysiwyg:before {
-  display: none;
-}
-#custom-wysiwyg .wrap-wysiwyg:after {
-  display: none;
-}
-#custom-wysiwyg .wrap-content {
-  padding: 1.875rem;
-}
-@media (min-width: 768px) {
-  #custom-wysiwyg .wrap-wysiwyg {
-    position: relative;
-    width: 100%;
-    max-width: 56.25rem;
-    margin: 0 auto;
-  }
-  #custom-wysiwyg .wrap-wysiwyg:before {
-    position: absolute;
-    display: inline-block;
-    content: url("/wp-content/themes/stefs-skin-studio/img/detail-right.svg");
-    top: 0;
-    right: 0;
-    width: auto;
-    height: auto;
-  }
-  #custom-wysiwyg .wrap-wysiwyg:after {
-    position: absolute;
-    display: inline-block;
-    content: url("/wp-content/themes/stefs-skin-studio/img/detail-left.svg");
-    bottom: 0;
-    left: 0;
-    width: auto;
-    height: auto;
-  }
-  #custom-wysiwyg .wrap-content {
-    padding: 4.6875rem;
-  }
 }
 
 #testimonies {

@@ -138,3 +138,8 @@ a {
         color: $lt-red;
     }
 }
+
+// Lists
+ul, ol {
+    padding-left: rem(20)
+}

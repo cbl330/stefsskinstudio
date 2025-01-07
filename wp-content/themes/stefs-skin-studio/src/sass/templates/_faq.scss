@@ -1,4 +1,7 @@
 #faq {
+    max-width: rem(850);
+    margin: 0 auto;
+
     // Bootstrap Overrides
     .accordion {
         --bs-accordion-border-width: 0;
