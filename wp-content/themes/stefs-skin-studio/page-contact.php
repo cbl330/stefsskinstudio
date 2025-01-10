@@ -40,7 +40,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<!-- Map and Contact Info -->
 							<div class="col-lg-5 mb-4 mb-lg-0">
 								<!-- Google Map -->
-								<div class="mb-4">
+								<!-- <div class="mb-4">
 									<iframe 
 										src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1000!2d-80.005!3d32.780!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x12345!2sSample+Location!5e0!3m2!1sen!2sus!4v1672538485396!5m2!1sen!2sus"
 										width="100%"
@@ -49,7 +49,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 										allowfullscreen=""
 										loading="lazy">
 									</iframe>
-								</div>
+								</div> -->
 								<!-- Contact Info -->
 								<div class="wrap-contact">
 									<div class="row">
@@ -71,14 +71,39 @@ $container = get_theme_mod( 'understrap_container_type' );
 											</div>
 										<?php endif; ?>
 
-										<div class="wrap-social col-md-6 mb-3">
-											<p class="fw-bold mb-2">Follow Us</p>
-											<div class="social-group d-flex justify-content-start">
-												<a href="#" class="facebook me-3"><i class="fab fa-facebook-f"></i></a>
-												<a href="#" class="instagram me-3"><i class="fab fa-instagram"></i></a>
-												<a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+										<!-- Start Social Wrap -->
+										<?php 
+											// ACF Variables - Social Links
+											$facebook = get_field('facebook_link', 'option');
+											$instagram = get_field('instagram_link', 'option');
+											$twitter = get_field('twitter_link', 'option');
+										?>
+
+										<?php if($facebook || $instagram || $twitter): ?>
+											<div class="wrap-social col-md-6 mb-3">
+												<p class="fw-bold mb-2">Follow Us</p>
+												
+												<div class="social-group d-flex justify-content-start">
+													<!-- Facebook -->
+													<?php if($facebook): ?>
+														<a href="<?php echo $facbook; ?>" class="facebook me-3"><i class="fab fa-facebook-f" target="_blank"></i></a>
+													<?php endif; ?>
+													
+													<!-- Instagram -->
+													<?php if($instagram): ?>
+														<a href="<?php echo $facbook; ?>" class="instagram me-3"><i class="fab fa-instagram" target="_blank"></i></a>
+													<?php endif; ?>
+
+													<!-- Twitter (X) -->
+													<?php if($twitter): ?>
+														<a href="<?php echo $facbook; ?>" class="twitter"><i class="fab fa-twitter" target="_blank"></i></a>
+													<?php endif; ?>
+												</div>
+
 											</div>
-										</div>
+										<?php endif; ?>
+										<!-- End Social Wrap -->
+
 									</div>
 								</div>
 							</div>

@@ -75,14 +75,40 @@ $container = get_theme_mod( 'understrap_container_type' );
 								endif;
 							?>
 
-							<div class="wrap-social d-lg-none">
-								<p class="fw-bold mb-2">Follow Us</p>
-								<div class="social-group d-flex justify-content-start">
-									<a href="#" class="facebook me-3"><i class="fab fa-facebook-f"></i></a>
-									<a href="#" class="instagram me-3"><i class="fab fa-instagram"></i></a>
-									<a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+							<!-- Start Social Wrap -->
+							<?php 
+								// ACF Variables - Social Links
+								$facebook = get_field('facebook_link', 'option');
+								$instagram = get_field('instagram_link', 'option');
+								$twitter = get_field('twitter_link', 'option');
+							?>
+
+							<?php if($facebook || $instagram || $twitter): ?>
+								<div class="wrap-social d-lg-none">
+									<p class="fw-bold mb-2">Follow Us</p>
+									
+									<div class="social-group d-flex justify-content-start">
+
+										<!-- Facebook -->
+										<?php if($facebook): ?>
+											<a href="<?php echo $facbook; ?>" class="facebook me-3"><i class="fab fa-facebook-f" target="_blank"></i></a>
+										<?php endif; ?>
+										
+										<!-- Instagram -->
+										<?php if($instagram): ?>
+											<a href="<?php echo $facbook; ?>" class="instagram me-3"><i class="fab fa-instagram" target="_blank"></i></a>
+										<?php endif; ?>
+
+										<!-- Twitter (X) -->
+										<?php if($twitter): ?>
+											<a href="<?php echo $facbook; ?>" class="twitter"><i class="fab fa-twitter" target="_blank"></i></a>
+										<?php endif; ?>
+
+									</div>
 								</div>
-							</div>
+							<?php endif; ?>
+							<!-- End Social Wrap -->
+
 						</div>
 					</div>
 					<!-- End Left Column -->
@@ -146,19 +172,48 @@ $container = get_theme_mod( 'understrap_container_type' );
 						<!-- End Copyright Wrap -->
 
 						<!-- Start Terms Wrap -->
+						 <?php 
+						 	// ACF Variables - Terms
+							 $privacy = get_field('privacy_policy_link', 'option');
+							 $terms = get_field('terms_and_conditions_link', 'option');
+							 $cookies = get_field('cookie_settings_link', 'option');
+						 ?>
+
 						<nav class="wrap-terms d-flex justify-content-start">
-							<a href="#" class="me-3">Privacy Policy</a>
-							<a href="#" class="me-3">Terms of Service</a>
-							<a href="#">Cookie Settings</a>
+							<a href="<?php echo $privacy; ?>" class="me-3" target="_blank">Privacy Policy</a>
+							<a href="<?php echo $terms; ?>" class="me-3" target="_blank">Terms of Service</a>
+							<a href="<?php echo $cookies; ?>" target="_blank">Cookie Settings</a>
 						</nav>
 						<!-- End Terms Wrap -->
 
 						<!-- Start Social Wrap -->
-						<div class="wrap-social d-none d-lg-flex justify-content-end">
-							<a href="#" class="facebook me-3"><i class="fab fa-facebook-f"></i></a>
-							<a href="#" class="instagram me-3"><i class="fab fa-instagram"></i></a>
-							<a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-						</div>
+						 <?php 
+						 	// ACF Variables - Social Links
+							$facebook = get_field('facebook_link', 'option');
+							$instagram = get_field('instagram_link', 'option');
+							$twitter = get_field('twitter_link', 'option');
+						 ?>
+
+						<?php if($facebook || $instagram || $twitter): ?>
+							<div class="wrap-social d-none d-lg-flex justify-content-end">
+								
+								<!-- Facebook -->
+								<?php if($facebook): ?>
+									<a href="<?php echo $facbook; ?>" class="facebook me-3"><i class="fab fa-facebook-f" target="_blank"></i></a>
+								<?php endif; ?>
+								
+								<!-- Instagram -->
+								<?php if($instagram): ?>
+									<a href="<?php echo $facbook; ?>" class="instagram me-3"><i class="fab fa-instagram" target="_blank"></i></a>
+								<?php endif; ?>
+
+								<!-- Twitter (X) -->
+								<?php if($twitter): ?>
+									<a href="<?php echo $facbook; ?>" class="twitter"><i class="fab fa-twitter" target="_blank"></i></a>
+								<?php endif; ?>
+
+							</div>
+						<?php endif; ?>
 						<!-- End Social Wrap -->
 
 					</div>
