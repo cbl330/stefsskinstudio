@@ -47,6 +47,10 @@ body:not(.home) {
 	}
 }
 
+.wpautoterms-footer {
+	display: none;
+}
+
 // Bootstrap Overrides
 @include respond-above(sm) {
 	.container {

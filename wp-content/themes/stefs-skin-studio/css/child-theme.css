@@ -15754,6 +15754,10 @@ body:not(.home) section {
   padding-bottom: 1.875rem;
 }
 
+.wpautoterms-footer {
+  display: none;
+}
+
 @media (min-width: 500px) {
   .container {
     max-width: 100%;

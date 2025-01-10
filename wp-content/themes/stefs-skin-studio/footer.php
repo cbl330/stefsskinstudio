@@ -13,6 +13,18 @@ defined( 'ABSPATH' ) || exit;
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
+<?php 
+	// ACF Variables - Social Links
+	$facebook = get_field('facebook_link', 'option');
+	$instagram = get_field('instagram_link', 'option');
+	$twitter = get_field('twitter_link', 'option');
+
+	// ACF Variables - Terms
+	$privacy = get_field('privacy_policy_link', 'option');
+	$terms = get_field('terms_and_conditions_link', 'option');
+	$cookies = get_field('cookie_settings_link', 'option');
+?>
+
 <?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
 
 	<footer id="footer" class="section-footer">
@@ -76,13 +88,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 							?>
 
 							<!-- Start Social Wrap -->
-							<?php 
-								// ACF Variables - Social Links
-								$facebook = get_field('facebook_link', 'option');
-								$instagram = get_field('instagram_link', 'option');
-								$twitter = get_field('twitter_link', 'option');
-							?>
-
 							<?php if($facebook || $instagram || $twitter): ?>
 								<div class="wrap-social d-lg-none">
 									<p class="fw-bold mb-2">Follow Us</p>
@@ -150,7 +155,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<?php endif; ?>
 							<p class="small">
 								By clicking Sign Up you're confirming that you agree with our
-								<a href="#" class="terms">Terms and Conditions</a>.
+								<a href="<?php echo $terms; ?>" class="terms">Terms and Conditions</a>.
 							</p>
 						</div>
 					</div>
@@ -172,13 +177,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 						<!-- End Copyright Wrap -->
 
 						<!-- Start Terms Wrap -->
-						 <?php 
-						 	// ACF Variables - Terms
-							 $privacy = get_field('privacy_policy_link', 'option');
-							 $terms = get_field('terms_and_conditions_link', 'option');
-							 $cookies = get_field('cookie_settings_link', 'option');
-						 ?>
-
 						<nav class="wrap-terms d-flex justify-content-start">
 							<a href="<?php echo $privacy; ?>" class="me-3" target="_blank">Privacy Policy</a>
 							<a href="<?php echo $terms; ?>" class="me-3" target="_blank">Terms of Service</a>
