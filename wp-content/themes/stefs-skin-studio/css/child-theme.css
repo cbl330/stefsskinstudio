@@ -15953,6 +15953,15 @@ hr {
 }
 #header .dropdown-menu .dropdown-item {
   padding: 0;
+  transition: all 0.3s ease-in-out;
+}
+#header .dropdown-menu .dropdown-item:hover, #header .dropdown-menu .dropdown-item:focus, #header .dropdown-menu .dropdown-item:focus-visible {
+  background-color: #fff;
+  color: #FF2D74;
+}
+#header .dropdown-menu .dropdown-item:active {
+  background-color: #fff;
+  color: #FF2D74;
 }
 #header .navbar-collapse {
   border-top: 3px solid #00E9C9;

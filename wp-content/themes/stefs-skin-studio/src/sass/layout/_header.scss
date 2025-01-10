@@ -157,6 +157,19 @@
 
 		.dropdown-item {
 			padding: 0;
+			transition: all $speed ease-in-out;
+
+			&:hover,
+			&:focus,
+			&:focus-visible {
+				background-color: $white;
+				color: $lt-red;
+			}
+		
+			&:active {
+				background-color: $white;
+				color: $lt-red;
+			}
 		}
 	}
 
