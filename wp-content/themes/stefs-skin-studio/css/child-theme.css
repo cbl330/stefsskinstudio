@@ -15612,6 +15612,10 @@ a h1, a .h1, a h2, a .h2, a h3, a .h3, a h4, a .h4, a h5, a .h5, a h6, a .h6, a 
 .breadcrumbs span:not(.breadcrumb_last) {
   padding-right: 0.5rem;
 }
+.breadcrumbs span:not(:first-child) {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
 .breadcrumbs span.breadcrumb_last {
   padding-left: 0.5rem;
   color: #FF2D74;

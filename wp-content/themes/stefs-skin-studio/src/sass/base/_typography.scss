@@ -49,6 +49,11 @@ a {
         padding-right: rem(8);
     }
 
+    span:not(:first-child) {
+        padding-right: rem(8);
+        padding-left: rem(8);
+    }
+
     span.breadcrumb_last {
         padding-left: rem(8);
         color: $lt-red;
