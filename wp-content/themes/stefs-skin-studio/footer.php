@@ -251,7 +251,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<?php endif; ?>
 				<?php if ($booking_link): ?>
 					<div class="wrap-icon wrap-book">
-						<a href="<?php echo esc_url($booking_link); ?>" class="icon calendar">
+						<a href="<?php echo esc_url($booking_link); ?>" class="icon calendar" target="_blank">
 							<i class="fas fa-calendar-check"></i>
 						</a>
 					</div>
