@@ -13,15 +13,22 @@
                 <?php foreach ($simple_content as $row): ?>
                     <?php 
                         $layout = $row['scb_content_layout']; // Image Right or Left
-                        $image = $row['scb_image_group']['scb_image'];
                         $content = $row['scb_content_group'];
+                        // $image = $row['scb_image_group']['scb_image'];
+                        $image_array = $row['scb_image_group']['scb_image'];
+
+                        // Extract URL and alt text from the array
+                        $image_url = $image_array['url'];
+                        $image_alt = $image_array['alt'];
                     ?>
                     <!-- <div class="row row-image-content align-items-center mb-5"> -->
                     <div class="row row-image-content <?php echo $layout === 'image-right' ? 'row-right' : 'row-left'; ?>">
                         <?php if ($layout === 'image-left'): ?>
                             <!-- Start Image Wrap - Img-Left -->
                             <div class="wrap-image img-left col-lg-6 mb-4 mb-lg-0">
-                                <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr__('Image for Simple Content', 'text-domain'); ?>" class="image-simple">
+                                <!-- <img src="<?php //echo esc_url($image); ?>" alt="<?php //echo esc_attr__('Image for Simple Content', 'text-domain'); ?>" class="image-simple"> -->
+
+                                <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" class="image-simple">
                             </div>
                             <!-- End Image Wrap - Img-Left -->
                         <?php endif; ?>
@@ -54,7 +61,9 @@
                         <?php if ($layout === 'image-right'): ?>
                             <!-- Start Image - Img-Right -->
                             <div class="wrap-image img-right col-lg-6 mb-4 mb-lg-0">
-                                <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr__('Image for Simple Content', 'text-domain'); ?>" class="image-simple">
+                                <!-- <img src="<?php //echo esc_url($image); ?>" alt="<?php //echo esc_attr__('Image for Simple Content', 'text-domain'); ?>" class="image-simple"> -->
+
+                                <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" class="image-simple">
                             </div>
                             <!-- End Image - Img-Right -->
                         <?php endif; ?>
@@ -76,14 +85,22 @@
                 <?php foreach ($grid_content as $row): ?>
                     <?php 
                         $layout = $row['gcb_layout_option']; // Image Right or Left
-                        $image = $row['gcb_image_group']['gcb_image'];
+                        // $image = $row['gcb_image_group']['gcb_image'];
                         $content = $row['gcb_content_group'];
+                        $image_array = $row['gcb_image_group']['gcb_image'];
+
+                        // Extract URL and alt text from the array
+                        $image_url = $image_array['url'];
+                        $image_alt = $image_array['alt'];
+
                     ?>
                     <div class="row row-image-content <?php echo $layout === 'image-right' ? 'row-right' : 'row-left'; ?>">
                         <?php if ($layout === 'image-left'): ?>
                             <!-- Start Image Wrap - Img-Left -->
                             <div class="wrap-image img-left col-lg-6 mb-4 mb-lg-0">
-                                <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr__('Image for Grid Content', 'text-domain'); ?>" class="image-grid">
+                                <!-- <img src="<?php //echo esc_url($image); ?>" alt="<?php //echo esc_attr__('Image for Grid Content', 'text-domain'); ?>" class="image-grid"> -->
+
+                                <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" class="image-simple">
                             </div>
                             <!-- End Image Wrap - Img-Left -->
                         <?php endif; ?>
@@ -106,7 +123,7 @@
                                 <!-- Buttons - Max 2 -->
                                 <div class="wrap-btn">
                                     <?php foreach ($content['gcb_content_button'] as $button): ?>
-                                            <a href="<?php echo esc_url($button['gcb_button_link']); ?>" class="btn"><?php echo esc_html($button['gcb_button_text']); ?></a>
+                                        <a href="<?php echo esc_url($button['gcb_button_link']); ?>" class="btn"><?php echo esc_html($button['gcb_button_text']); ?></a>
                                     <?php endforeach; ?>
                                 </div>
                             <?php endif; ?>
@@ -116,7 +133,9 @@
                         <?php if ($layout === 'image-right'): ?>
                             <!-- Start Image - Img-Right  -->
                             <div class="wrap-image img-right col-lg-6">
-                                <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr__('Image for Grid Content', 'text-domain'); ?>" class="image-grid">
+                                <!-- <img src="<?php //echo esc_url($image); ?>" alt="<?php //echo esc_attr__('Image for Grid Content', 'text-domain'); ?>" class="image-grid"> -->
+
+                                <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" class="image-simple">
                             </div>
                             <!-- End Image - Img-Right  -->
                         <?php endif; ?>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Blog
+ * Template Name: Service
  *
  * Learn more: https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -22,7 +22,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<div class="row">
 
             <main class="site-main" id="main">
-                <section id="blog-archive" class="section-blog-archive section-archive py-5">
+                <section id="blog-archive" class="section-service-archive section-archive py-5">
                     <div class="container">
 
                         <!-- Start Page Header Wrap -->
@@ -43,6 +43,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                         if ($paged == 1) {
                             // Start Featured Post Row
                             $featured_query = new WP_Query(array(
+                                'post_type' => 'service',
                                 'posts_per_page' => 1,
                                 'post_status'    => 'publish',
                             ));
@@ -92,6 +93,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                         // Query for additional posts
                         $offset = ($paged == 1) ? 1 : 0; // Skip the featured post only on the first page
                         $additional_query = new WP_Query(array(
+                            'post_type' => 'service',
                             'posts_per_page' => $posts_per_page,
                             'post_status'    => 'publish',
                             'paged'          => $paged,

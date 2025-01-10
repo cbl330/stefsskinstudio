@@ -117,10 +117,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<?php if ($form_title = get_field('footer_form_title', 'option')): ?>
 								<p class="fw-bold mb-3"><?php echo $form_title; ?></p>
 							<?php endif; ?>
-							<?php if ($form = get_field('sign_up_form_shortcode', 'option')): ?>
-								<form class="d-flex flex-column flex-md-row mb-3">
-									<?php echo do_shortcode($form); ?>
-								</form>
+							<?php if (get_field('sign_up_form_shortcode', 'option')): ?>
+								<div class="d-flex flex-column flex-md-row mb-3">
+									<?php echo do_shortcode(get_field('sign_up_form_shortcode', 'option')); ?>
+								</div>
 							<?php endif; ?>
 							<p class="small">
 								By clicking Sign Up you're confirming that you agree with our

@@ -105,6 +105,8 @@
 // START INTERNAL PAGE HERO
 // --------------------------------------------------
 #hero-internal {
+    margin-bottom: -10vw;
+
     .wrap {
         &-image {
             display: flex;
@@ -166,6 +168,8 @@
     // Tablet Styles
 	// ________________________________________________________
     @include respond-above(sm) {
+        margin-bottom: -5vw;
+
         .wrap {
             &-image {
                 justify-content: end;
@@ -188,7 +192,8 @@
     // Desktop Styles
 	// ________________________________________________________
     @include respond-above(lg) {
-        margin-bottom: rem(150);
+        // margin-bottom: rem(150);
+        margin-bottom: 10vw;
 
         .row-content {
             align-items: end;
@@ -209,7 +214,8 @@
     }
 
     @include respond-above(xl) {
-        margin-bottom: rem(400);
+        // margin-bottom: rem(400);
+        margin-bottom: 20vw;
 
         .wrap {    
             &-content {
@@ -236,9 +242,9 @@
         }
     }
 
-    @include respond-above(xl4) {
-        margin-bottom: rem(475);
-    }
+    // @include respond-above(xl4) {
+    //     margin-bottom: rem(475);
+    // }
 }
 // --------------------------------------------------
 // END INTERNAL PAGE HERO

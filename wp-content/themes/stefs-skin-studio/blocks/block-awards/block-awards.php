@@ -1,16 +1,16 @@
 <section id="awards" class="section-awards bg-white text-center">
     <div class="container">
         <!-- Heading -->
-        <?php if (get_field('award_header')): ?>
-            <h2 class="mb-5"><?php echo esc_html(get_field('award_header')); ?></h2>
+        <?php if (get_field('award_header', 'option')): ?>
+            <h2 class="mb-5"><?php echo esc_html(get_field('award_header', 'option')); ?></h2>
         <?php endif; ?>
 
         <!-- Award Badges -->
-        <?php if (have_rows('award_repeater')): ?>
-            <div class="row-awards row">
-                <?php while (have_rows('award_repeater')): the_row(); ?>
+        <?php if (have_rows('awards_repeater', 'option')): ?>
+            <div class="row-awards row align-items-center">
+                <?php while (have_rows('awards_repeater', 'option')): the_row(); ?>
                     <?php 
-                        $award_image = get_sub_field('award'); 
+                        $award_image = get_sub_field('award_image', 'option'); 
                         if ($award_image): 
                     ?>
                         <!-- Single Badge -->

@@ -34,7 +34,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 			<main class="site-main" id="main">
 
-				<section id="contact-section" class="py-4 py-lg-3">
+				<section id="contact-section" class="mt-5 py-4 py-lg-3">
 					<div class="container">
 						<div class="row row-contact">
 							<!-- Map and Contact Info -->
@@ -87,76 +87,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 							<div class="col-lg-7">
 
 								<?php if ($form = get_field('contact_form_shortcode')): ?>
-									<form class="d-flex flex-column flex-md-row mb-3">
+									<div class="d-flex flex-column flex-md-row mb-3">
 										<?php echo do_shortcode($form); ?>
-									</form>
+									</div>
 								<?php endif; ?>
 
-								<!-- <form>
-									<div class="row mb-3">
-										<div class="col-12 col-md-6">
-										<label for="firstName" class="form-label">First name</label>
-										<input type="text" class="form-control" id="firstName" placeholder="First name" required>
-										</div>
-										<div class="col-12 col-md-6">
-										<label for="lastName" class="form-label">Last name</label>
-										<input type="text" class="form-control" id="lastName" placeholder="Last name" required>
-										</div>
-									</div>
-									<div class="row mb-3">
-										<div class="col-12 col-md-6">
-										<label for="email" class="form-label">Email</label>
-										<input type="email" class="form-control" id="email" placeholder="Email" required>
-										</div>
-										<div class="col-12 col-md-6">
-										<label for="phone" class="form-label">Phone number</label>
-										<input type="tel" class="form-control" id="phone" placeholder="Phone number">
-										</div>
-									</div>
-									<div class="mb-3">
-										<label for="topic" class="form-label">Choose a topic</label>
-										<select class="form-select" id="topic" required>
-										<option value="" selected>Select one...</option>
-										<option value="facials">Facials</option>
-										<option value="skincare">Skincare Consultations</option>
-										<option value="waxing">Waxing Services</option>
-										</select>
-									</div>
-									<div class="mb-3">
-										<label class="form-label">Which best describes you?</label>
-										<div class="d-flex flex-wrap">
-										<div class="form-check me-3">
-											<input class="form-check-input" type="radio" name="description" id="option1" value="first" required>
-											<label class="form-check-label" for="option1">First choice</label>
-										</div>
-										<div class="form-check me-3">
-											<input class="form-check-input" type="radio" name="description" id="option2" value="second">
-											<label class="form-check-label" for="option2">Second choice</label>
-										</div>
-										<div class="form-check me-3">
-											<input class="form-check-input" type="radio" name="description" id="option3" value="third">
-											<label class="form-check-label" for="option3">Third choice</label>
-										</div>
-										<div class="form-check me-3">
-											<input class="form-check-input" type="radio" name="description" id="option4" value="fourth">
-											<label class="form-check-label" for="option4">Fourth choice</label>
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="radio" name="description" id="option5" value="other">
-											<label class="form-check-label" for="option5">Other</label>
-										</div>
-									</div>
-									</div>
-									<div class="mb-3">
-										<label for="message" class="form-label">Message</label>
-										<textarea class="form-control" id="message" rows="4" placeholder="Type your message..."></textarea>
-									</div>
-									<div class="mb-3 form-check">
-										<input type="checkbox" class="form-check-input" id="terms" required>
-										<label class="form-check-label" for="terms">I accept the Terms</label>
-									</div>
-									<button type="submit" class="btn btn-primary w-100">Submit</button>
-								</form> -->
 							</div>
 						</div>
 					</div>
